@@ -56,15 +56,23 @@
 		044653FD247D4924005CAF43 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				044653FE247D4924005CAF43 /* AppDelegate.swift */,
-				04465400247D4924005CAF43 /* SceneDelegate.swift */,
 				04465402247D4924005CAF43 /* ViewController.swift */,
 				04465404247D4924005CAF43 /* Main.storyboard */,
+				04465412247D4944005CAF43 /* Resources */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		04465412247D4944005CAF43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				044653FE247D4924005CAF43 /* AppDelegate.swift */,
+				04465400247D4924005CAF43 /* SceneDelegate.swift */,
 				04465407247D4927005CAF43 /* Assets.xcassets */,
 				04465409247D4927005CAF43 /* LaunchScreen.storyboard */,
 				0446540C247D4927005CAF43 /* Info.plist */,
 			);
-			path = Portfolio;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
-				INFOPLIST_FILE = Portfolio/Info.plist;
+				INFOPLIST_FILE = Portfolio/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
-				INFOPLIST_FILE = Portfolio/Info.plist;
+				INFOPLIST_FILE = Portfolio/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
