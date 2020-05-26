@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SSNetworking",
+        "repositoryURL": "https://github.com/swift-student/SSNetworking.git",
+        "state": {
+          "branch": null,
+          "revision": "7cda5f98a235a2d685273e1fd6ee9ae5f9e0fafe",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

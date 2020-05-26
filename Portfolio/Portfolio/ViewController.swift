@@ -7,15 +7,23 @@
 //
 
 import UIKit
-import PortfolioCore
 
 class ViewController: UIViewController {
     
+    private let networkClient = NetworkClient()
+    
     override func viewDidLoad() {
+        
+        networkClient.fetchAllProjects { (result) in
+            switch result {
+            case .failure(let error):
+                print("⚠️ There was an error fetching all projects: \(error)")
+            case .success(let projects):
+                print("😁 Successfully fetched all projects: \(projects)")
+            }
+        }
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 

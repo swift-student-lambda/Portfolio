@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		04465406247D4924005CAF43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465404247D4924005CAF43 /* Main.storyboard */; };
 		04465408247D4927005CAF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04465407247D4927005CAF43 /* Assets.xcassets */; };
 		0446540B247D4927005CAF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465409247D4927005CAF43 /* LaunchScreen.storyboard */; };
+		04D0FAD4247DB21A00DB6875 /* SSNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 04D0FAD3247DB21A00DB6875 /* SSNetworking */; };
+		04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0FAD5247DB25600DB6875 /* NetworkClient.swift */; };
+		04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A237247D8543005F40F0 /* ProjectRepresentation.swift */; };
+		04D0FAD8247DB61A00DB6875 /* FeatureRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A236247D8543005F40F0 /* FeatureRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +28,9 @@
 		04465407247D4927005CAF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0446540A247D4927005CAF43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0446540C247D4927005CAF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0464A236247D8543005F40F0 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
-		0464A237247D8543005F40F0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		0464A236247D8543005F40F0 /* FeatureRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRepresentation.swift; sourceTree = "<group>"; };
+		0464A237247D8543005F40F0 /* ProjectRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepresentation.swift; sourceTree = "<group>"; };
+		04D0FAD5247DB25600DB6875 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D0FAD4247DB21A00DB6875 /* SSNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +67,7 @@
 			children = (
 				0464A235247D8543005F40F0 /* Models */,
 				04465402247D4924005CAF43 /* ViewController.swift */,
+				04D0FAD5247DB25600DB6875 /* NetworkClient.swift */,
 				04465404247D4924005CAF43 /* Main.storyboard */,
 				04465412247D4944005CAF43 /* Resources */,
 			);
@@ -89,8 +96,8 @@
 		0464A235247D8543005F40F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0464A236247D8543005F40F0 /* Feature.swift */,
-				0464A237247D8543005F40F0 /* Project.swift */,
+				0464A236247D8543005F40F0 /* FeatureRepresentation.swift */,
+				0464A237247D8543005F40F0 /* ProjectRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 			);
 			name = Portfolio;
 			packageProductDependencies = (
+				04D0FAD3247DB21A00DB6875 /* SSNetworking */,
 			);
 			productName = Portfolio;
 			productReference = 044653FB247D4924005CAF43 /* Portfolio.app */;
@@ -141,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 044653F2247D4924005CAF43;
+			packageReferences = (
+				04D0FAD2247DB21A00DB6875 /* XCRemoteSwiftPackageReference "SSNetworking" */,
+			);
 			productRefGroup = 044653FC247D4924005CAF43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D0FAD8247DB61A00DB6875 /* FeatureRepresentation.swift in Sources */,
 				04465403247D4924005CAF43 /* ViewController.swift in Sources */,
 				044653FF247D4924005CAF43 /* AppDelegate.swift in Sources */,
 				04465401247D4924005CAF43 /* SceneDelegate.swift in Sources */,
+				04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */,
+				04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04D0FAD2247DB21A00DB6875 /* XCRemoteSwiftPackageReference "SSNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-student/SSNetworking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04D0FAD3247DB21A00DB6875 /* SSNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04D0FAD2247DB21A00DB6875 /* XCRemoteSwiftPackageReference "SSNetworking" */;
+			productName = SSNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 044653F3247D4924005CAF43 /* Project object */;
 }
