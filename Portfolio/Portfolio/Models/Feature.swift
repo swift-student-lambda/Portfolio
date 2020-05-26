@@ -8,14 +8,10 @@
 
 import Foundation
 
-class Feature {
-    var mediaURL: URL
-    var description: String
-    var codeSnippet: String
-    
-    init(mediaURL: URL, description: String, codeSnippet: String) {
-        self.mediaURL = mediaURL
-        self.description = description
-        self.codeSnippet = codeSnippet
-    }
+struct Feature: Codable {
+    let name: String
+    let id: UUID?
+    let mediaURL: String
+    let description: String
+    let codeSnippet: String?
 }
