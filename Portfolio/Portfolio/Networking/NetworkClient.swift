@@ -12,7 +12,7 @@ import SSNetworking
 private let baseURL = URL(string: "http://localhost:8080")!
 
 class NetworkClient {
-    func fetchAllProjects(completion: @escaping (Result<[ProjectRepresentation], NetworkError>) -> Void) {
+    func fetchAllProjects(completion: @escaping (Result<[ProjectRep], NetworkError>) -> Void) {
         let url = baseURL.appendingPathComponent("projects")
         URLSession.shared.dataResultTask(with: URLRequest(url: url)) { result in
             completion(ProjectRepDecoder().decode(result))

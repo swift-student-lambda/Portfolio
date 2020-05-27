@@ -14,10 +14,18 @@
 		04465408247D4927005CAF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04465407247D4927005CAF43 /* Assets.xcassets */; };
 		0446540B247D4927005CAF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465409247D4927005CAF43 /* LaunchScreen.storyboard */; };
 		04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */; };
+		04A648DC247E268B0012F317 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648DB247E268B0012F317 /* CoreDataStack.swift */; };
+		04A648DE247E289F0012F317 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648DD247E289F0012F317 /* SyncEngine.swift */; };
+		04A648E0247E33D80012F317 /* Project+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648DF247E33D80012F317 /* Project+Convenience.swift */; };
+		04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648E1247E35490012F317 /* Project+CoreDataClass.swift */; };
+		04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648E2247E35490012F317 /* Project+CoreDataProperties.swift */; };
+		04A648E7247E35490012F317 /* Feature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648E3247E35490012F317 /* Feature+CoreDataClass.swift */; };
+		04A648E8247E35490012F317 /* Feature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648E4247E35490012F317 /* Feature+CoreDataProperties.swift */; };
+		04A648EA247EBA910012F317 /* Feature+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A648E9247EBA910012F317 /* Feature+Convenience.swift */; };
 		04D0FAD4247DB21A00DB6875 /* SSNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 04D0FAD3247DB21A00DB6875 /* SSNetworking */; };
 		04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0FAD5247DB25600DB6875 /* NetworkClient.swift */; };
-		04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A237247D8543005F40F0 /* ProjectRepresentation.swift */; };
-		04D0FAD8247DB61A00DB6875 /* FeatureRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A236247D8543005F40F0 /* FeatureRepresentation.swift */; };
+		04D0FAD7247DB61700DB6875 /* ProjectRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A237247D8543005F40F0 /* ProjectRep.swift */; };
+		04D0FAD8247DB61A00DB6875 /* FeatureRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A236247D8543005F40F0 /* FeatureRep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +37,17 @@
 		04465407247D4927005CAF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0446540A247D4927005CAF43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0446540C247D4927005CAF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0464A236247D8543005F40F0 /* FeatureRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRepresentation.swift; sourceTree = "<group>"; };
-		0464A237247D8543005F40F0 /* ProjectRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepresentation.swift; sourceTree = "<group>"; };
+		0464A236247D8543005F40F0 /* FeatureRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRep.swift; sourceTree = "<group>"; };
+		0464A237247D8543005F40F0 /* ProjectRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRep.swift; sourceTree = "<group>"; };
 		04A648D9247DEFB00012F317 /* Portfolio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Portfolio.xcdatamodel; sourceTree = "<group>"; };
+		04A648DB247E268B0012F317 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		04A648DD247E289F0012F317 /* SyncEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		04A648DF247E33D80012F317 /* Project+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+Convenience.swift"; sourceTree = "<group>"; };
+		04A648E1247E35490012F317 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Project+CoreDataClass.swift"; path = "Portfolio/Models/Project/Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		04A648E2247E35490012F317 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Project+CoreDataProperties.swift"; path = "Portfolio/Models/Project/Project+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		04A648E3247E35490012F317 /* Feature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataClass.swift"; path = "Portfolio/Models/Feature/Feature+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		04A648E4247E35490012F317 /* Feature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataProperties.swift"; path = "Portfolio/Models/Feature/Feature+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		04A648E9247EBA910012F317 /* Feature+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feature+Convenience.swift"; sourceTree = "<group>"; };
 		04D0FAD5247DB25600DB6875 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				0464A235247D8543005F40F0 /* Models */,
+				04A648EE247EC1F90012F317 /* Networking */,
 				04465402247D4924005CAF43 /* ViewController.swift */,
-				04D0FAD5247DB25600DB6875 /* NetworkClient.swift */,
 				04465404247D4924005CAF43 /* Main.storyboard */,
 				04465412247D4944005CAF43 /* Resources */,
 			);
@@ -98,11 +114,43 @@
 		0464A235247D8543005F40F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04A648EB247EBB090012F317 /* Project */,
+				04A648EC247EBB320012F317 /* Feature */,
 				04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */,
-				0464A236247D8543005F40F0 /* FeatureRepresentation.swift */,
-				0464A237247D8543005F40F0 /* ProjectRepresentation.swift */,
+				04A648DB247E268B0012F317 /* CoreDataStack.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		04A648EB247EBB090012F317 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				04A648E1247E35490012F317 /* Project+CoreDataClass.swift */,
+				04A648E2247E35490012F317 /* Project+CoreDataProperties.swift */,
+				04A648DF247E33D80012F317 /* Project+Convenience.swift */,
+				0464A237247D8543005F40F0 /* ProjectRep.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		04A648EC247EBB320012F317 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				04A648E3247E35490012F317 /* Feature+CoreDataClass.swift */,
+				04A648E4247E35490012F317 /* Feature+CoreDataProperties.swift */,
+				04A648E9247EBA910012F317 /* Feature+Convenience.swift */,
+				0464A236247D8543005F40F0 /* FeatureRep.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		04A648EE247EC1F90012F317 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04D0FAD5247DB25600DB6875 /* NetworkClient.swift */,
+				04A648DD247E289F0012F317 /* SyncEngine.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +230,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D0FAD8247DB61A00DB6875 /* FeatureRepresentation.swift in Sources */,
+				04D0FAD8247DB61A00DB6875 /* FeatureRep.swift in Sources */,
 				04465403247D4924005CAF43 /* ViewController.swift in Sources */,
+				04A648E8247E35490012F317 /* Feature+CoreDataProperties.swift in Sources */,
 				044653FF247D4924005CAF43 /* AppDelegate.swift in Sources */,
+				04A648E7247E35490012F317 /* Feature+CoreDataClass.swift in Sources */,
 				04465401247D4924005CAF43 /* SceneDelegate.swift in Sources */,
-				04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */,
+				04D0FAD7247DB61700DB6875 /* ProjectRep.swift in Sources */,
 				04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */,
 				04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */,
+				04A648E0247E33D80012F317 /* Project+Convenience.swift in Sources */,
+				04A648DC247E268B0012F317 /* CoreDataStack.swift in Sources */,
+				04A648EA247EBA910012F317 /* Feature+Convenience.swift in Sources */,
+				04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */,
+				04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */,
+				04A648DE247E289F0012F317 /* SyncEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

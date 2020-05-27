@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FeatureRepresentation: Codable {
+struct FeatureRep: Codable {
     let name: String
     let id: UUID
     let mediaURL: String

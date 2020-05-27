@@ -9,7 +9,7 @@
 import Foundation
 import SSNetworking
 
-struct ProjectRepresentation: Codable {
+struct ProjectRep: Codable {
     let name: String
     let id: UUID
     let heroImageURL: String
@@ -17,10 +17,10 @@ struct ProjectRepresentation: Codable {
     let role: String
     let technologies: [String]
     let appStoreLink: String?
-    let features: [FeatureRepresentation]
+    let features: [FeatureRep]
 }
 
 struct ProjectRepDecoder: ResultDecoder {
-    typealias ResultType = [ProjectRepresentation]
+    typealias ResultType = [ProjectRep]
 }
 
