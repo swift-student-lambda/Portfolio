@@ -29,21 +29,20 @@ class ProjectCollectionViewController: UICollectionViewController {
         
         return frc
     }()
+    
+    private var cellSize = CGSize()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         syncEngine.syncProjects()
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -82,46 +81,57 @@ class ProjectCollectionViewController: UICollectionViewController {
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    // MARK: - Scroll View Delegate - Paging
+    
+    private var targetPage = 0
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // Set target page to current page initially
+        targetPage = Int((scrollView.contentOffset.x / cellSize.width).rounded())
     }
-    */
-
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        // Use velocity to determine target page
+        if velocity.x > 0 {
+            targetPage += 1
+        } else if velocity.x < 0 {
+            targetPage -= 1
+        } else {
+            // If no velocity, go to closest page
+            targetPage = Int((scrollView.contentOffset.x / cellSize.width).rounded())
+        }
+        
+        // Only animate to the target page if it is valid, otherwise just bounce
+        if targetPage >= 0 && targetPage < collectionView.numberOfItems(inSection: 0) {
+            let targetPageOffset = CGFloat(targetPage) * cellSize.width
+            scrollView.setContentOffset(.init(x: targetPageOffset, y: 0), animated: true)
+            targetContentOffset.pointee = CGPoint(x: scrollView.contentOffset.x, y: 0)
+        }
+    }
 }
+
+// MARK: - Flow Layout Delegate
 
 extension ProjectCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height - collectionView.safeAreaInsets.bottom - collectionView.safeAreaInsets.top
         let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
         
-        return CGSize(width: width, height: height)
+        cellSize = CGSize(width: width * 0.8, height: height)
+        return cellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
+        
+        return width * 0.2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
+        return .init(top: 0, left: width * 0.1, bottom: 0, right: width * 0.1)
     }
 }
 
