@@ -11,16 +11,24 @@ import CoreData
 
 class SyncEngine {
     
-    private let networkClient = NetworkClient()
+    private let networkClient: NetworkClient
     
-    init() {
+    init(networkClient: NetworkClient) {
+        self.networkClient = networkClient
+    }
+    
+    func syncProjects() {
         networkClient.fetchAllProjects { (result) in
             switch result {
             case .failure(let error):
-                print("⚠️ There was an error fetching all projects: \(error)")
+                print("⚠️ Error fetching all projects: \(error)")
             case .success(let projectReps):
                 print("😁 Successfully fetched all projects: \(projectReps)")
-                try? self.updateProjects(with: projectReps)
+                do {
+                    try self.updateProjects(with: projectReps)
+                } catch {
+                    print("⚠️ Error updating projects: \(error)")
+                }
             }
         }
     }
@@ -32,7 +40,7 @@ class SyncEngine {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiers)
         let context = CoreDataStack.shared.container.newBackgroundContext()
-        
+        context.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
         context.performAndWait {
             do {
                 let existingProjects = try context.fetch(fetchRequest)
@@ -64,7 +72,7 @@ class SyncEngine {
         project.role = representation.role
         project.technologies = representation.technologies as [NSString]
         project.appStoreLink = representation.appStoreLink
-        let featureArray = representation.features.map { Feature(representation: $0, context: context) }
+        let featureArray = representation.features.map { Feature(representation: $0, project: project, context: context) }
         project.features = Set(featureArray) as NSSet
     }
 }

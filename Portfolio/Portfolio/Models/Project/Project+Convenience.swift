@@ -38,7 +38,7 @@ extension Project {
         self.role = representation.role
         self.technologies = representation.technologies as [NSString]
         self.appStoreLink = representation.appStoreLink
-        let featureArray = representation.features.map { Feature(representation: $0, context: context) }
+        let featureArray = representation.features.map { Feature(representation: $0, project: self, context: context) }
         self.features = Set(featureArray) as NSSet
     }
 }
