@@ -10,7 +10,7 @@ import Foundation
 
 struct FeatureRepresentation: Codable {
     let name: String
-    let id: UUID?
+    let id: UUID
     let mediaURL: String
     let description: String
     let codeSnippet: String?

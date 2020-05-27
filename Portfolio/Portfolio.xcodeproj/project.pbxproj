@@ -13,6 +13,7 @@
 		04465406247D4924005CAF43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465404247D4924005CAF43 /* Main.storyboard */; };
 		04465408247D4927005CAF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04465407247D4927005CAF43 /* Assets.xcassets */; };
 		0446540B247D4927005CAF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465409247D4927005CAF43 /* LaunchScreen.storyboard */; };
+		04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */; };
 		04D0FAD4247DB21A00DB6875 /* SSNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 04D0FAD3247DB21A00DB6875 /* SSNetworking */; };
 		04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0FAD5247DB25600DB6875 /* NetworkClient.swift */; };
 		04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A237247D8543005F40F0 /* ProjectRepresentation.swift */; };
@@ -30,6 +31,7 @@
 		0446540C247D4927005CAF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0464A236247D8543005F40F0 /* FeatureRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRepresentation.swift; sourceTree = "<group>"; };
 		0464A237247D8543005F40F0 /* ProjectRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepresentation.swift; sourceTree = "<group>"; };
+		04A648D9247DEFB00012F317 /* Portfolio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Portfolio.xcdatamodel; sourceTree = "<group>"; };
 		04D0FAD5247DB25600DB6875 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		0464A235247D8543005F40F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */,
 				0464A236247D8543005F40F0 /* FeatureRepresentation.swift */,
 				0464A237247D8543005F40F0 /* ProjectRepresentation.swift */,
 			);
@@ -185,6 +188,7 @@
 				04465401247D4924005CAF43 /* SceneDelegate.swift in Sources */,
 				04D0FAD7247DB61700DB6875 /* ProjectRepresentation.swift in Sources */,
 				04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */,
+				04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +405,19 @@
 			productName = SSNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04A648D9247DEFB00012F317 /* Portfolio.xcdatamodel */,
+			);
+			currentVersion = 04A648D9247DEFB00012F317 /* Portfolio.xcdatamodel */;
+			path = Portfolio.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 044653F3247D4924005CAF43 /* Project object */;
 }

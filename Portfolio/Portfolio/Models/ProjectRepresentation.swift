@@ -11,7 +11,7 @@ import SSNetworking
 
 struct ProjectRepresentation: Codable {
     let name: String
-    let id: UUID?
+    let id: UUID
     let heroImageURL: String
     let summary: String
     let role: String
