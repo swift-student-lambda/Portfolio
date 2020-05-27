@@ -9,5 +9,6 @@
 import UIKit
 
 class ProjectCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var heroImageView: UIImageView!
 }

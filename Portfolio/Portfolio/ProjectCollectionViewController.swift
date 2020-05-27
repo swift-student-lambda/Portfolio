@@ -65,6 +65,8 @@ class ProjectCollectionViewController: UICollectionViewController {
     
         let project = fetchedResultsController.object(at: indexPath)
         
+        cell.nameLabel.text = project.name
+        
         if let url = URL(string: project.heroImageURL) {
             networkClient.fetchImage(url: url) { (result) in
                 switch result {
@@ -116,7 +118,10 @@ class ProjectCollectionViewController: UICollectionViewController {
 
 extension ProjectCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
+        let height = collectionView.frame.height - collectionView.safeAreaInsets.bottom - collectionView.safeAreaInsets.top
+        let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
+        
+        return CGSize(width: width, height: height)
     }
 }
 
