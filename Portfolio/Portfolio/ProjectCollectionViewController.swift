@@ -30,6 +30,10 @@ class ProjectCollectionViewController: UICollectionViewController {
         return frc
     }()
     
+    private var collectionViewWidth: CGFloat {
+        collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
+    }
+    
     private var cellSize = CGSize()
 
     override func viewDidLoad() {
