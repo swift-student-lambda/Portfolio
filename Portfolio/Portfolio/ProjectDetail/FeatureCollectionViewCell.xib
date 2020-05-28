@@ -25,17 +25,38 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-GS-pDX">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdE-Nf-ihu">
                                 <rect key="frame" x="20" y="44" width="320" height="693"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-GS-pDX">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="693"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="1Zr-rm-hv9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-xH-Js8" customClass="VideoPlayerView" customModule="Portfolio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="693"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="1Zr-rm-hv9"/>
+                                    <constraint firstAttribute="bottom" secondItem="JkM-GS-pDX" secondAttribute="bottom" id="0EX-jq-a1m"/>
+                                    <constraint firstAttribute="bottom" secondItem="AWk-xH-Js8" secondAttribute="bottom" id="4eK-vR-oBM"/>
+                                    <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="B1U-yQ-qDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="AWk-xH-Js8" secondAttribute="trailing" id="PwH-q9-9Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" id="R8j-uS-KTb"/>
+                                    <constraint firstItem="AWk-xH-Js8" firstAttribute="top" secondItem="QdE-Nf-ihu" secondAttribute="top" id="jqu-PT-Dvb"/>
+                                    <constraint firstItem="JkM-GS-pDX" firstAttribute="leading" secondItem="QdE-Nf-ihu" secondAttribute="leading" id="sKp-gG-s5L"/>
+                                    <constraint firstItem="AWk-xH-Js8" firstAttribute="leading" secondItem="QdE-Nf-ihu" secondAttribute="leading" id="so6-Or-vrP"/>
+                                    <constraint firstItem="JkM-GS-pDX" firstAttribute="top" secondItem="QdE-Nf-ihu" secondAttribute="top" id="tbd-c2-gzN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </imageView>
+                            </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-0h-2q6">
                                 <rect key="frame" x="100" y="757" width="160" height="44"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,14 +92,14 @@
                             <constraint firstItem="FJD-Dc-UyO" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" id="1el-8Q-05p"/>
                             <constraint firstItem="Ghk-4W-z1I" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" id="5aR-8l-opM"/>
                             <constraint firstAttribute="trailing" secondItem="Ghk-4W-z1I" secondAttribute="trailing" id="8Kl-iC-4vK"/>
-                            <constraint firstItem="cA6-0h-2q6" firstAttribute="top" secondItem="JkM-GS-pDX" secondAttribute="bottom" constant="20" id="ASk-0J-U8m"/>
-                            <constraint firstItem="JkM-GS-pDX" firstAttribute="top" secondItem="FJD-Dc-UyO" secondAttribute="bottom" constant="20" id="Or5-gY-PMs"/>
+                            <constraint firstItem="QdE-Nf-ihu" firstAttribute="top" secondItem="FJD-Dc-UyO" secondAttribute="bottom" constant="20" id="DHO-Gd-RHC"/>
+                            <constraint firstItem="QdE-Nf-ihu" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" constant="20" id="KQt-rc-6ad"/>
+                            <constraint firstAttribute="trailing" secondItem="QdE-Nf-ihu" secondAttribute="trailing" constant="20" id="SBO-4w-EqM"/>
                             <constraint firstItem="cA6-0h-2q6" firstAttribute="centerX" secondItem="7aP-X6-Wu7" secondAttribute="centerX" id="Seh-5Q-vO5"/>
+                            <constraint firstItem="cA6-0h-2q6" firstAttribute="top" secondItem="QdE-Nf-ihu" secondAttribute="bottom" constant="20" id="Td7-Er-oXi"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ghk-4W-z1I" secondAttribute="bottom" id="V86-Ky-4Yk"/>
                             <constraint firstItem="Ghk-4W-z1I" firstAttribute="top" secondItem="cA6-0h-2q6" secondAttribute="bottom" constant="20" id="dbG-6v-pMv"/>
                             <constraint firstItem="FJD-Dc-UyO" firstAttribute="top" secondItem="7aP-X6-Wu7" secondAttribute="top" id="fZC-wP-nE7"/>
-                            <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" constant="20" id="jJ1-zO-gjM"/>
-                            <constraint firstItem="JkM-GS-pDX" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" constant="20" id="oOA-tf-EBR"/>
                             <constraint firstAttribute="trailing" secondItem="FJD-Dc-UyO" secondAttribute="trailing" id="tuY-qk-GH1"/>
                         </constraints>
                     </view>

@@ -160,7 +160,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QGk-q3-JDX" firstAttribute="top" secondItem="Ams-JV-mAq" secondAttribute="top" constant="20" id="D5L-Ul-hkN"/>
                             <constraint firstItem="NQf-QE-C5N" firstAttribute="leading" secondItem="qmb-gX-2Gs" secondAttribute="leading" id="JUP-PP-4pO"/>

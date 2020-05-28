@@ -37,6 +37,7 @@
 		04DA2A5A248019E7009C5BFE /* ProjectDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */; };
 		04DA2A5C24801D34009C5BFE /* NSAttributedString+BulletPointList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */; };
 		04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5F24804430009C5BFE /* CodeViewController.swift */; };
+		04DA2A6224805BB6009C5BFE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailHeaderView.xib; sourceTree = "<group>"; };
 		04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+BulletPointList.swift"; sourceTree = "<group>"; };
 		04DA2A5F24804430009C5BFE /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				04465404247D4924005CAF43 /* Main.storyboard */,
+				04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */,
 				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
 				04DA2A5F24804430009C5BFE /* CodeViewController.swift */,
 				04DA2A56248019C1009C5BFE /* ProjectCollectionView */,
@@ -316,6 +319,7 @@
 				04A648EA247EBA910012F317 /* Feature+Convenience.swift in Sources */,
 				04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */,
 				04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */,
+				04DA2A6224805BB6009C5BFE /* VideoPlayerView.swift in Sources */,
 				04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */,
 				04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */,
 				04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */,
