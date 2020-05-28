@@ -19,7 +19,12 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Properties
     
-    private var sizingCell = FeatureCollectionViewCell()
+    private lazy var sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell",
+                                                           owner: self,
+                                                           options: nil)?.first as! FeatureCollectionViewCell
+    private lazy var sizingHeader = Bundle.main.loadNibNamed("ProjectDetailHeaderView",
+                                                             owner: self,
+                                                             options: nil)?.first as! ProjectDetailHeaderView
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -29,8 +34,6 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UINib(nibName: "ProjectDetailHeaderView", bundle: .main),
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                       withReuseIdentifier: headerID)
-            
-        sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell", owner: self, options: nil)?.first as! FeatureCollectionViewCell
     }
 
     /*
@@ -89,13 +92,16 @@ extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLay
         sizingCell.layoutIfNeeded()
         var cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         cellSize.width = collectionView.frame.width
-        print(cellSize)
         return cellSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width = collectionView.frame.width
         
-        return CGSize(width: width, height: width * 1.1)
+        sizingHeader.project = project
+        sizingHeader.setNeedsLayout()
+        sizingHeader.layoutIfNeeded()
+        var headerSize = sizingHeader.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        headerSize.height += 20
+        return headerSize
     }
 }
