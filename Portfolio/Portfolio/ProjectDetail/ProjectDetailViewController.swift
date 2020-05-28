@@ -1,5 +1,5 @@
 //
-//  ProjectDetailCollectionViewController.swift
+//  ProjectDetailViewController.swift
 //  Portfolio
 //
 //  Created by Shawn Gee on 5/27/20.
@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import WebKit
 
 private let cellID = "FeatureCell"
 private let headerID = "ProjectDetailHeaderView"
 
-class ProjectDetailCollectionViewController: UICollectionViewController {
+class ProjectDetailViewController: UIViewController {
     
     // MARK: - Public Properties
     
@@ -19,56 +20,70 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Properties
     
+    @IBOutlet var collectionView: UICollectionView!
+    
     private lazy var sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell",
                                                            owner: self,
                                                            options: nil)?.first as! FeatureCollectionViewCell
     private lazy var sizingHeader = Bundle.main.loadNibNamed("ProjectDetailHeaderView",
                                                              owner: self,
                                                              options: nil)?.first as! ProjectDetailHeaderView
-
+    
     // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: cellID)
         self.collectionView!.register(UINib(nibName: "ProjectDetailHeaderView", bundle: .main),
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                       withReuseIdentifier: headerID)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - IBActions
+    
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true)
     }
-    */
+}
 
-    // MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension ProjectDetailViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         project?.featuresArray.count ?? 0
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: cellID,
             for: indexPath) as? FeatureCollectionViewCell else {
                 fatalError("Unable to cast cell as \(FeatureCollectionViewCell.self)")
         }
-    
+        
         cell.feature = project?.featuresArray[indexPath.row]
-    
+        cell.seeCodeAction = { [weak self] in
+            guard let self = self else { return }
+            print("See code button tapped")
+            guard let codeVC = UIStoryboard(name: "Main", bundle: .main)
+                .instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController else {
+                    return
+            }
+            self.present(codeVC, animated: true, completion: nil)
+            
+        }
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: headerID,
@@ -80,12 +95,11 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
         
         return header
     }
-
 }
 
 // MARK: - Flow Layout Delegate
 
-extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension ProjectDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         sizingCell.feature = project?.featuresArray[indexPath.item]
         sizingCell.setNeedsLayout()

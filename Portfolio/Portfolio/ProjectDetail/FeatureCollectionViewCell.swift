@@ -11,6 +11,7 @@ import UIKit
 class FeatureCollectionViewCell: UICollectionViewCell {
     
     var feature: Feature? { didSet { updateViews() }}
+    var seeCodeAction: (() -> Void)?
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -30,10 +31,27 @@ class FeatureCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = feature.descriptionText
     }
     
-    
     override func prepareForReuse() {
         loadImageOperation?.cancel()
         loadImageOperation = nil
     }
+    
+    @IBAction func seeCodeButtonTouchDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.backgroundColor = .systemGray2
+        }
+    }
 
+    @IBAction func seeCodeButtonTouchUpInside(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.backgroundColor = .systemGray5
+        }
+        seeCodeAction?()
+    }
+    
+    @IBAction func seeCodeButtonTouchCancel(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.backgroundColor = .systemGray5
+        }
+    }
 }

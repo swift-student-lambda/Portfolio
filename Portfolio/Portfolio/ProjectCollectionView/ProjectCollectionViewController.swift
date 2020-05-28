@@ -46,7 +46,7 @@ class ProjectCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let projectDetailVC = segue.destination as? ProjectDetailCollectionViewController,
+        if let projectDetailVC = segue.destination as? ProjectDetailViewController,
             let indexPath = collectionView.indexPathsForSelectedItems?.first {
             projectDetailVC.project = fetchedResultsController.object(at: indexPath)
         }

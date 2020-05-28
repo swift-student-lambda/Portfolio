@@ -36,19 +36,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-0h-2q6">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-0h-2q6">
                                 <rect key="frame" x="100" y="757" width="160" height="44"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Vet-7I-wih"/>
                                     <constraint firstAttribute="width" constant="160" id="pYr-Pb-HKU"/>
                                 </constraints>
-                                <state key="normal" title="See The Code"/>
+                                <state key="normal" title="See The Code">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="seeCodeButtonTouchCancel:" destination="gTV-IL-0wX" eventType="touchCancel" id="cI2-DR-xSw"/>
+                                    <action selector="seeCodeButtonTouchDown:" destination="gTV-IL-0wX" eventType="touchDown" id="1Ec-vj-elh"/>
+                                    <action selector="seeCodeButtonTouchDragExit:" destination="gTV-IL-0wX" eventType="touchDragExit" id="jef-aj-RSY"/>
+                                    <action selector="seeCodeButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="byf-71-54K"/>
+                                    <action selector="seeCodeButtonTouchUpOutside:" destination="gTV-IL-0wX" eventType="touchUpOutside" id="eb4-z5-MbV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-4W-z1I">
                                 <rect key="frame" x="0.0" y="821" width="360" height="20.5"/>

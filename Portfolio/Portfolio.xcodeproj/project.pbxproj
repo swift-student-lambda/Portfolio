@@ -27,7 +27,7 @@
 		04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0FAD5247DB25600DB6875 /* NetworkClient.swift */; };
 		04D0FAD7247DB61700DB6875 /* ProjectRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A237247D8543005F40F0 /* ProjectRep.swift */; };
 		04D0FAD8247DB61A00DB6875 /* FeatureRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A236247D8543005F40F0 /* FeatureRep.swift */; };
-		04DA2A43247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */; };
+		04DA2A43247F10A5009C5BFE /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A42247F10A5009C5BFE /* ProjectDetailViewController.swift */; };
 		04DA2A46247F10D0009C5BFE /* FeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */; };
 		04DA2A47247F10D0009C5BFE /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */; };
 		04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4A247FED12009C5BFE /* SSFetchImageOperation.m */; };
@@ -36,6 +36,7 @@
 		04DA2A59248019E7009C5BFE /* ProjectDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */; };
 		04DA2A5A248019E7009C5BFE /* ProjectDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */; };
 		04DA2A5C24801D34009C5BFE /* NSAttributedString+BulletPointList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */; };
+		04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5F24804430009C5BFE /* CodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +61,7 @@
 		04A648EF247EC2AF0012F317 /* ProjectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewController.swift; sourceTree = "<group>"; };
 		04A648F1247EC2C60012F317 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		04D0FAD5247DB25600DB6875 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCollectionViewController.swift; sourceTree = "<group>"; };
+		04DA2A42247F10A5009C5BFE /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCollectionViewCell.xib; sourceTree = "<group>"; };
 		04DA2A49247FED12009C5BFE /* SSConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSConcurrentOperation.h; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailHeaderView.swift; sourceTree = "<group>"; };
 		04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailHeaderView.xib; sourceTree = "<group>"; };
 		04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+BulletPointList.swift"; sourceTree = "<group>"; };
+		04DA2A5F24804430009C5BFE /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				04465404247D4924005CAF43 /* Main.storyboard */,
 				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
+				04DA2A5F24804430009C5BFE /* CodeViewController.swift */,
 				04DA2A56248019C1009C5BFE /* ProjectCollectionView */,
 				04DA2A55248019B4009C5BFE /* ProjectDetail */,
 				0464A235247D8543005F40F0 /* Models */,
@@ -197,7 +200,7 @@
 		04DA2A55248019B4009C5BFE /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
-				04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */,
+				04DA2A42247F10A5009C5BFE /* ProjectDetailViewController.swift */,
 				04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */,
 				04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */,
 				04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */,
@@ -306,7 +309,7 @@
 				04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */,
 				04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */,
 				04A648E0247E33D80012F317 /* Project+Convenience.swift in Sources */,
-				04DA2A43247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift in Sources */,
+				04DA2A43247F10A5009C5BFE /* ProjectDetailViewController.swift in Sources */,
 				04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */,
 				04DA2A5C24801D34009C5BFE /* NSAttributedString+BulletPointList.swift in Sources */,
 				04A648DC247E268B0012F317 /* CoreDataStack.swift in Sources */,
@@ -315,6 +318,7 @@
 				04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */,
 				04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */,
 				04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */,
+				04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */,
 				04A648DE247E289F0012F317 /* SyncEngine.swift in Sources */,
 				04DA2A46247F10D0009C5BFE /* FeatureCollectionViewCell.swift in Sources */,
 			);

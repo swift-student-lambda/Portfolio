@@ -63,7 +63,7 @@
                                 <connections>
                                     <outlet property="heroImageView" destination="1vH-Qz-NC2" id="wZU-Cc-mZr"/>
                                     <outlet property="nameLabel" destination="bS7-py-Dbr" id="Xhi-UW-tcX"/>
-                                    <segue destination="JUq-Nk-S28" kind="presentation" id="AlH-hQ-QEl"/>
+                                    <segue destination="qCT-8o-DbY" kind="presentation" id="LZN-T9-E5w"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -78,30 +78,105 @@
             </objects>
             <point key="canvasLocation" x="-1296" y="94"/>
         </scene>
-        <!--Project Detail Collection View Controller-->
-        <scene sceneID="FMC-pd-GsX">
+        <!--Project Detail View Controller-->
+        <scene sceneID="1na-YV-UhO">
             <objects>
-                <collectionViewController id="JUq-Nk-S28" customClass="ProjectDetailCollectionViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Y6F-ce-HsZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController modalPresentationStyle="fullScreen" id="qCT-8o-DbY" customClass="ProjectDetailViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qKu-Ra-VpL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x7l-8R-ei2">
+                                <rect key="frame" x="0.0" y="9" width="414" height="887"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="A11-X4-FpI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-Lz-9ib">
+                                <rect key="frame" x="365" y="64" width="29" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="x.circle.fill" catalog="system">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="light"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="qCT-8o-DbY" eventType="touchUpInside" id="1vM-V1-jSF"/>
+                                    <action selector="dismiss:" destination="NuS-t8-g2A" eventType="touchUpInside" id="4NO-Ly-NX1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oHd-gq-CYD">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="JUq-Nk-S28" id="Sd3-5q-4GH"/>
-                            <outlet property="delegate" destination="JUq-Nk-S28" id="DZB-y2-1ls"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JMx-Qi-GEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="x7l-8R-ei2" secondAttribute="trailing" id="BBJ-6r-4Y2"/>
+                            <constraint firstAttribute="bottom" secondItem="x7l-8R-ei2" secondAttribute="bottom" id="IFb-aG-uOw"/>
+                            <constraint firstItem="vKT-9c-TW9" firstAttribute="trailing" secondItem="Efs-Lz-9ib" secondAttribute="trailing" constant="20" id="PhT-w9-YZ5"/>
+                            <constraint firstItem="Efs-Lz-9ib" firstAttribute="top" secondItem="vKT-9c-TW9" secondAttribute="top" constant="20" id="T5n-hF-RLu"/>
+                            <constraint firstItem="x7l-8R-ei2" firstAttribute="leading" secondItem="qKu-Ra-VpL" secondAttribute="leading" id="el9-MF-ANL"/>
+                            <constraint firstItem="x7l-8R-ei2" firstAttribute="top" secondItem="qKu-Ra-VpL" secondAttribute="top" constant="9" id="qOb-el-jiy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vKT-9c-TW9"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="x7l-8R-ei2" id="prT-s2-2EF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZU3-Ts-ft1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1297" y="-583"/>
+            <point key="canvasLocation" x="-1277" y="-599"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="BlL-Uz-0Al">
+            <objects>
+                <viewController storyboardIdentifier="CodeViewController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="NuS-t8-g2A" customClass="CodeViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qmb-gX-2Gs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-QE-C5N">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGk-q3-JDX">
+                                <rect key="frame" x="365" y="64" width="29" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="x.circle.fill" catalog="system">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="light"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="NuS-t8-g2A" eventType="touchUpInside" id="ENU-fM-SML"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QGk-q3-JDX" firstAttribute="top" secondItem="Ams-JV-mAq" secondAttribute="top" constant="20" id="D5L-Ul-hkN"/>
+                            <constraint firstItem="NQf-QE-C5N" firstAttribute="top" secondItem="Ams-JV-mAq" secondAttribute="top" id="FdV-Xo-luG"/>
+                            <constraint firstItem="NQf-QE-C5N" firstAttribute="leading" secondItem="Ams-JV-mAq" secondAttribute="leading" id="UHD-zc-LVw"/>
+                            <constraint firstItem="Ams-JV-mAq" firstAttribute="trailing" secondItem="QGk-q3-JDX" secondAttribute="trailing" constant="20" id="nAn-vp-gUr"/>
+                            <constraint firstItem="Ams-JV-mAq" firstAttribute="trailing" secondItem="NQf-QE-C5N" secondAttribute="trailing" id="qCw-BR-fZg"/>
+                            <constraint firstItem="Ams-JV-mAq" firstAttribute="bottom" secondItem="NQf-QE-C5N" secondAttribute="bottom" id="tIb-ao-ny2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ams-JV-mAq"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="NQf-QE-C5N" id="peX-rb-6nX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTC-oJ-yHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-377" y="-602"/>
         </scene>
         <!--About Me-->
         <scene sceneID="vdu-9c-Gvc">
@@ -143,5 +218,6 @@
         <image name="app" catalog="system" width="128" height="114"/>
         <image name="iphone11-bezel" width="2880" height="5664"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
