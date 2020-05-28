@@ -24,7 +24,6 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
         sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell", owner: self, options: nil)?.first as! FeatureCollectionViewCell
-        collectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
 
         // Do any additional setup after loading the view.
     }
@@ -67,11 +66,13 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
 extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         sizingCell.feature = project?.featuresArray[indexPath.item]
-        let width = collectionView.frame.width
-        sizingCell.frame = CGRect(origin: sizingCell.frame.origin, size: CGSize(width: width, height: sizingCell.frame.height))
+//        let width = collectionView.frame.width
+//        sizingCell.frame = CGRect(origin: sizingCell.frame.origin, size: CGSize(width: width, height: sizingCell.frame.height))
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
-        let cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        var cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        cellSize.width = collectionView.frame.width
+        print(cellSize)
         return cellSize
     }
 }
