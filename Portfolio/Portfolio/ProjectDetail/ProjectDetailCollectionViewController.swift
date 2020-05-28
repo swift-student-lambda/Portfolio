@@ -8,7 +8,8 @@
 
 import UIKit
 
-private let reuseIdentifier = "FeatureCell"
+private let cellID = "FeatureCell"
+private let headerID = "ProjectDetailHeaderView"
 
 class ProjectDetailCollectionViewController: UICollectionViewController {
     
@@ -24,8 +25,11 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
-        
+        self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: cellID)
+        self.collectionView!.register(UINib(nibName: "ProjectDetailHeaderView", bundle: .main),
+                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                      withReuseIdentifier: headerID)
+            
         sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell", owner: self, options: nil)?.first as! FeatureCollectionViewCell
     }
 
@@ -51,7 +55,7 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier,
+            withReuseIdentifier: cellID,
             for: indexPath) as? FeatureCollectionViewCell else {
                 fatalError("Unable to cast cell as \(FeatureCollectionViewCell.self)")
         }
@@ -59,6 +63,19 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
         cell.feature = project?.featuresArray[indexPath.row]
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: headerID,
+            for: indexPath) as? ProjectDetailHeaderView else {
+                fatalError("Unable to cast header as \(ProjectDetailHeaderView.self)")
+        }
+        
+        header.project = project
+        
+        return header
     }
 
 }
@@ -74,5 +91,11 @@ extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLay
         cellSize.width = collectionView.frame.width
         print(cellSize)
         return cellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width = collectionView.frame.width
+        
+        return CGSize(width: width, height: width * 1.1)
     }
 }

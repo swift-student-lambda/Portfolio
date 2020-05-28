@@ -16,28 +16,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="1161"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-X6-Wu7">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-X6-Wu7" userLabel="Content View">
                         <rect key="frame" x="20" y="20" width="360" height="1141"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Feature Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-Dc-UyO">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-GS-pDX">
-                                <rect key="frame" x="0.0" y="53.5" width="360" height="779.5"/>
+                                <rect key="frame" x="20" y="44" width="320" height="693"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="1Zr-rm-hv9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-0h-2q6">
-                                <rect key="frame" x="100" y="853" width="160" height="44"/>
+                                <rect key="frame" x="100" y="757" width="160" height="44"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Vet-7I-wih"/>
@@ -51,13 +51,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-4W-z1I">
-                                <rect key="frame" x="0.0" y="917" width="360" height="20.5"/>
+                                <rect key="frame" x="0.0" y="821" width="360" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FJD-Dc-UyO" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" id="1el-8Q-05p"/>
                             <constraint firstItem="Ghk-4W-z1I" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" id="5aR-8l-opM"/>
@@ -68,8 +68,8 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ghk-4W-z1I" secondAttribute="bottom" id="V86-Ky-4Yk"/>
                             <constraint firstItem="Ghk-4W-z1I" firstAttribute="top" secondItem="cA6-0h-2q6" secondAttribute="bottom" constant="20" id="dbG-6v-pMv"/>
                             <constraint firstItem="FJD-Dc-UyO" firstAttribute="top" secondItem="7aP-X6-Wu7" secondAttribute="top" id="fZC-wP-nE7"/>
-                            <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" id="jJ1-zO-gjM"/>
-                            <constraint firstItem="JkM-GS-pDX" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" id="oOA-tf-EBR"/>
+                            <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" constant="20" id="jJ1-zO-gjM"/>
+                            <constraint firstItem="JkM-GS-pDX" firstAttribute="leading" secondItem="7aP-X6-Wu7" secondAttribute="leading" constant="20" id="oOA-tf-EBR"/>
                             <constraint firstAttribute="trailing" secondItem="FJD-Dc-UyO" secondAttribute="trailing" id="tuY-qk-GH1"/>
                         </constraints>
                     </view>

@@ -33,6 +33,9 @@
 		04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4A247FED12009C5BFE /* SSFetchImageOperation.m */; };
 		04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4C247FED12009C5BFE /* SSConcurrentOperation.m */; };
 		04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4D247FED12009C5BFE /* SSLoadImageOperation.m */; };
+		04DA2A59248019E7009C5BFE /* ProjectDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */; };
+		04DA2A5A248019E7009C5BFE /* ProjectDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */; };
+		04DA2A5C24801D34009C5BFE /* NSAttributedString+BulletPointList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		04DA2A4D247FED12009C5BFE /* SSLoadImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLoadImageOperation.m; sourceTree = "<group>"; };
 		04DA2A4E247FED12009C5BFE /* SSFetchImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFetchImageOperation.h; sourceTree = "<group>"; };
 		04DA2A52247FEF85009C5BFE /* Portfolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Portfolio-Bridging-Header.h"; sourceTree = "<group>"; };
+		04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailHeaderView.swift; sourceTree = "<group>"; };
+		04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailHeaderView.xib; sourceTree = "<group>"; };
+		04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+BulletPointList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				04465404247D4924005CAF43 /* Main.storyboard */,
-				04A648EF247EC2AF0012F317 /* ProjectCollectionViewController.swift */,
-				04A648F1247EC2C60012F317 /* ProjectCollectionViewCell.swift */,
-				04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */,
-				04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */,
-				04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */,
+				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
+				04DA2A56248019C1009C5BFE /* ProjectCollectionView */,
+				04DA2A55248019B4009C5BFE /* ProjectDetail */,
 				0464A235247D8543005F40F0 /* Models */,
 				04DA2A48247FED12009C5BFE /* Operations */,
 				04A648EE247EC1F90012F317 /* Networking */,
@@ -190,6 +194,27 @@
 			path = Operations;
 			sourceTree = "<group>";
 		};
+		04DA2A55248019B4009C5BFE /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */,
+				04DA2A57248019E7009C5BFE /* ProjectDetailHeaderView.swift */,
+				04DA2A58248019E7009C5BFE /* ProjectDetailHeaderView.xib */,
+				04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */,
+				04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */,
+			);
+			path = ProjectDetail;
+			sourceTree = "<group>";
+		};
+		04DA2A56248019C1009C5BFE /* ProjectCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04A648EF247EC2AF0012F317 /* ProjectCollectionViewController.swift */,
+				04A648F1247EC2C60012F317 /* ProjectCollectionViewCell.swift */,
+			);
+			path = ProjectCollectionView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,6 +281,7 @@
 			files = (
 				0446540B247D4927005CAF43 /* LaunchScreen.storyboard in Resources */,
 				04DA2A47247F10D0009C5BFE /* FeatureCollectionViewCell.xib in Resources */,
+				04DA2A5A248019E7009C5BFE /* ProjectDetailHeaderView.xib in Resources */,
 				04465408247D4927005CAF43 /* Assets.xcassets in Resources */,
 				04465406247D4924005CAF43 /* Main.storyboard in Resources */,
 			);
@@ -276,11 +302,13 @@
 				04A648E7247E35490012F317 /* Feature+CoreDataClass.swift in Sources */,
 				04465401247D4924005CAF43 /* SceneDelegate.swift in Sources */,
 				04D0FAD7247DB61700DB6875 /* ProjectRep.swift in Sources */,
+				04DA2A59248019E7009C5BFE /* ProjectDetailHeaderView.swift in Sources */,
 				04D0FAD6247DB25600DB6875 /* NetworkClient.swift in Sources */,
 				04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */,
 				04A648E0247E33D80012F317 /* Project+Convenience.swift in Sources */,
 				04DA2A43247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift in Sources */,
 				04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */,
+				04DA2A5C24801D34009C5BFE /* NSAttributedString+BulletPointList.swift in Sources */,
 				04A648DC247E268B0012F317 /* CoreDataStack.swift in Sources */,
 				04A648EA247EBA910012F317 /* Feature+Convenience.swift in Sources */,
 				04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */,
