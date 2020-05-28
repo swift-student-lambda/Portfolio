@@ -1,26 +1,26 @@
 //
-//  SSFetchImageOperation.m
+//  SSFetchDataOperation.m
 //  Astronomy
 //
 //  Created by Shawn Gee on 5/19/20.
 //  Copyright © 2020 Swift Student. All rights reserved.
 //
 
-#import "SSFetchImageOperation.h"
+#import "SSFetchDataOperation.h"
 
-@interface SSFetchImageOperation ()
+@interface SSFetchDataOperation ()
 
 @property NSURLSessionDataTask *fetchImageTask;
 
 @end
 
-@implementation SSFetchImageOperation
+@implementation SSFetchDataOperation
 
-- (instancetype)initWithImageURL:(NSURL *)imageURL {
+- (instancetype)initWithURL:(NSURL *)url {
     self = [super init];
     if (!self) { return nil; }
     
-    _imageURL = imageURL;
+    _url = url;
     
     return self;
 }
@@ -28,7 +28,7 @@
 - (void)main {
     if (self.isCancelled) { return; }
     
-    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:self.imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:self.url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {
             NSLog(@"Error fetching image: %@", error);
@@ -40,7 +40,7 @@
             return;
         }
 
-        self.imageData = data;
+        self.data = data;
         [self finish];
     }];
     

@@ -69,7 +69,14 @@ extension ProjectDetailViewController: UICollectionViewDataSource {
                 fatalError("Unable to cast cell as \(FeatureCollectionViewCell.self)")
         }
         
-        cell.feature = project?.featuresArray[indexPath.row]
+        
+        let feature = project?.featuresArray[indexPath.row]
+        cell.feature = feature
+        
+        if let urlString = feature?.mediaURL, let url = URL(string: urlString) {
+            cell.loadMedia(with: url)
+        }
+        
         cell.seeCodeAction = { [weak self] url in
             guard let self = self else { return }
             guard let codeVC = UIStoryboard(name: "Main", bundle: .main)
@@ -78,8 +85,8 @@ extension ProjectDetailViewController: UICollectionViewDataSource {
             }
             codeVC.url = url
             self.present(codeVC, animated: true, completion: nil)
-            
         }
+        
         return cell
     }
     

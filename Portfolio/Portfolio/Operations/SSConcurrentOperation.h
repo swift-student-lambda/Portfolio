@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, SSConcurrentOperationState) {
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(ConcurrentOperation)
 @interface SSConcurrentOperation : NSOperation
 
 - (void)finish;

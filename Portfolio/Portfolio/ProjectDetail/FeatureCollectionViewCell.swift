@@ -7,34 +7,56 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FeatureCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Public Properties
     
     var feature: Feature? { didSet { updateViews() }}
     var seeCodeAction: ((URL) -> Void)?
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var seeCodeButton: UIButton!
-    @IBOutlet var descriptionLabel: UILabel!
+    // MARK: - Private Properties
     
     private var loadImageOperation: LoadImageOperation?
     
-    func updateViews() {
+    // MARK: - IBOutlets
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var videoPlayerView: VideoPlayerView!
+    @IBOutlet var seeCodeButton: UIButton!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    // MARK: - Public Methods
+    
+    func loadMedia(with url: URL) {
+        if url.pathExtension.isImageExtension {
+            loadImageOperation = LoadImageOperation(url: url, imageView: imageView)
+        } else if url.pathExtension.isVideoExtension {
+            //            videoPlayerView.isHidden = false
+            //            videoPlayer = AVPlayer(url: url)
+            //            videoPlayerView.player = videoPlayer
+            //            videoPlayer?.play()
+        }
+    }
+    
+    // MARK: - Private Methods
+    
+    private func updateViews() {
         guard let feature = feature else { return }
         nameLabel.text = feature.name
-        
-        if let url = URL(string: feature.mediaURL) {
-             loadImageOperation = LoadImageOperation(url: url, imageView: imageView)
-        }
-
         descriptionLabel.text = feature.descriptionText
     }
     
+    private var videoPlayer: AVPlayer?
+
     override func prepareForReuse() {
         loadImageOperation?.cancel()
         loadImageOperation = nil
     }
+    
+    // MARK: - IBActions
     
     @IBAction func seeCodeButtonTouchDown(_ sender: UIButton) {
         UIView.animate(withDuration: 0.1) {
@@ -57,5 +79,14 @@ class FeatureCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.1) {
             sender.backgroundColor = .systemGray5
         }
+    }
+}
+
+extension String {
+    var isImageExtension: Bool {
+        ["jpg", "jpeg", "png", "gif"].contains(self)
+    }
+    var isVideoExtension: Bool {
+        ["mov", "mp4", "m4v"].contains(self)
     }
 }

@@ -36,7 +36,7 @@
                                     </imageView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-xH-Js8" customClass="VideoPlayerView" customModule="Portfolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="693"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -75,9 +75,7 @@
                                 <connections>
                                     <action selector="seeCodeButtonTouchCancel:" destination="gTV-IL-0wX" eventType="touchCancel" id="cI2-DR-xSw"/>
                                     <action selector="seeCodeButtonTouchDown:" destination="gTV-IL-0wX" eventType="touchDown" id="1Ec-vj-elh"/>
-                                    <action selector="seeCodeButtonTouchDragExit:" destination="gTV-IL-0wX" eventType="touchDragExit" id="jef-aj-RSY"/>
                                     <action selector="seeCodeButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="byf-71-54K"/>
-                                    <action selector="seeCodeButtonTouchUpOutside:" destination="gTV-IL-0wX" eventType="touchUpOutside" id="eb4-z5-MbV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-4W-z1I">
@@ -118,6 +116,7 @@
                 <outlet property="imageView" destination="JkM-GS-pDX" id="7pW-qR-mts"/>
                 <outlet property="nameLabel" destination="FJD-Dc-UyO" id="f3V-4y-rYk"/>
                 <outlet property="seeCodeButton" destination="cA6-0h-2q6" id="AIo-Qj-rml"/>
+                <outlet property="videoPlayerView" destination="AWk-xH-Js8" id="bma-cV-bx6"/>
             </connections>
             <point key="canvasLocation" x="-102.89855072463769" y="584.93303571428567"/>
         </collectionViewCell>

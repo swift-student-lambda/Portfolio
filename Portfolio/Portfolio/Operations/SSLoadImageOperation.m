@@ -7,14 +7,14 @@
 //
 
 #import "SSLoadImageOperation.h"
-#import "SSFetchImageOperation.h"
+#import "SSFetchDataOperation.h"
 
 @interface SSLoadImageOperation ()
 
 @property (class, nonatomic, readonly) NSOperationQueue *loadImageQueue;
 @property (class, nonatomic, readonly) NSCache *imageCache;
 
-@property (nonatomic, readonly) SSFetchImageOperation *fetchImageOperation;
+@property (nonatomic, readonly) SSFetchDataOperation *fetchImageOperation;
 @property (nonatomic, readonly) NSBlockOperation *cacheImageOperation;
 @property (nonatomic, readonly) NSBlockOperation *updateImageViewOperation;
 
@@ -63,9 +63,9 @@ static NSCache *_imageCache;
 
 // MARK: - Operations
 
-- (SSFetchImageOperation *)fetchImageOperation {
+- (SSFetchDataOperation *)fetchImageOperation {
     if (!_fetchImageOperation) {
-        _fetchImageOperation = [[SSFetchImageOperation alloc] initWithImageURL:self.url];
+        _fetchImageOperation = [[SSFetchDataOperation alloc] initWithURL:self.url];
     }
     
     return _fetchImageOperation;
@@ -76,7 +76,7 @@ static NSCache *_imageCache;
         _cacheImageOperation = [NSBlockOperation blockOperationWithBlock:^{
             if (self.isCancelled) { return; }
             
-            NSData *imageData = self.fetchImageOperation.imageData;
+            NSData *imageData = self.fetchImageOperation.data;
             if (imageData) {
                 [SSLoadImageOperation.imageCache setObject:imageData forKey:self.url.absoluteString cost:imageData.length];
             }
@@ -91,7 +91,7 @@ static NSCache *_imageCache;
         _updateImageViewOperation = [NSBlockOperation blockOperationWithBlock:^{
             if (self.isCancelled) { return; }
             
-            NSData *imageData = self.fetchImageOperation.imageData;
+            NSData *imageData = self.fetchImageOperation.data;
             self.imageView.image = [UIImage imageWithData:imageData];
         }];
     }

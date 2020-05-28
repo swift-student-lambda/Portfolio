@@ -1,5 +1,5 @@
 //
-//  SSFetchImageOperation.h
+//  SSFetchDataOperation.h
 //  Astronomy
 //
 //  Created by Shawn Gee on 5/19/20.
@@ -10,12 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SSFetchImageOperation : SSConcurrentOperation
+@interface SSFetchDataOperation : SSConcurrentOperation
 
-@property NSURL *imageURL;
-@property NSData *imageData;
+@property NSURL *url;
+@property NSData *data;
 
-- (instancetype)initWithImageURL:(NSURL *)imageURL;
+- (instancetype)initWithURL:(NSURL *)imageURL;
 
 @end
 
