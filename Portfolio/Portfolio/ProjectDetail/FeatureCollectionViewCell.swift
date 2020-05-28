@@ -11,7 +11,7 @@ import UIKit
 class FeatureCollectionViewCell: UICollectionViewCell {
     
     var feature: Feature? { didSet { updateViews() }}
-    var seeCodeAction: (() -> Void)?
+    var seeCodeAction: ((URL) -> Void)?
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -43,10 +43,14 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func seeCodeButtonTouchUpInside(_ sender: UIButton) {
+        if let urlString = feature?.codeSnippet, let url = URL(string: urlString) {
+            seeCodeAction?(url)
+        }
         UIView.animate(withDuration: 0.1) {
             sender.backgroundColor = .systemGray5
         }
-        seeCodeAction?()
+        
+        
     }
     
     @IBAction func seeCodeButtonTouchCancel(_ sender: UIButton) {

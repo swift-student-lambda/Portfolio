@@ -11,6 +11,10 @@ import WebKit
 
 class CodeViewController: UIViewController {
     
+    // MARK: - Public Properties
+    
+    var url: URL?
+    
     // MARK: - IBOutlets
     
     @IBOutlet var webView: WKWebView!
@@ -19,6 +23,8 @@ class CodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let url = url else { return }
+        webView.load(URLRequest(url: url))
     }
     
     // MARK: - IBActions

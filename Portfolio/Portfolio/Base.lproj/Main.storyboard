@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,8 +140,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-QE-C5N">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="WebViewBG"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -162,11 +163,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QGk-q3-JDX" firstAttribute="top" secondItem="Ams-JV-mAq" secondAttribute="top" constant="20" id="D5L-Ul-hkN"/>
-                            <constraint firstItem="NQf-QE-C5N" firstAttribute="top" secondItem="Ams-JV-mAq" secondAttribute="top" id="FdV-Xo-luG"/>
-                            <constraint firstItem="NQf-QE-C5N" firstAttribute="leading" secondItem="Ams-JV-mAq" secondAttribute="leading" id="UHD-zc-LVw"/>
+                            <constraint firstItem="NQf-QE-C5N" firstAttribute="leading" secondItem="qmb-gX-2Gs" secondAttribute="leading" id="JUP-PP-4pO"/>
+                            <constraint firstItem="NQf-QE-C5N" firstAttribute="top" secondItem="qmb-gX-2Gs" secondAttribute="top" id="SLO-nZ-hGH"/>
+                            <constraint firstAttribute="trailing" secondItem="NQf-QE-C5N" secondAttribute="trailing" id="fw0-MB-RxM"/>
                             <constraint firstItem="Ams-JV-mAq" firstAttribute="trailing" secondItem="QGk-q3-JDX" secondAttribute="trailing" constant="20" id="nAn-vp-gUr"/>
-                            <constraint firstItem="Ams-JV-mAq" firstAttribute="trailing" secondItem="NQf-QE-C5N" secondAttribute="trailing" id="qCw-BR-fZg"/>
-                            <constraint firstItem="Ams-JV-mAq" firstAttribute="bottom" secondItem="NQf-QE-C5N" secondAttribute="bottom" id="tIb-ao-ny2"/>
+                            <constraint firstAttribute="bottom" secondItem="NQf-QE-C5N" secondAttribute="bottom" id="rCA-Rl-byn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ams-JV-mAq"/>
                     </view>
@@ -219,5 +220,8 @@
         <image name="iphone11-bezel" width="2880" height="5664"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="WebViewBG">
+            <color red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -70,13 +70,13 @@ extension ProjectDetailViewController: UICollectionViewDataSource {
         }
         
         cell.feature = project?.featuresArray[indexPath.row]
-        cell.seeCodeAction = { [weak self] in
+        cell.seeCodeAction = { [weak self] url in
             guard let self = self else { return }
-            print("See code button tapped")
             guard let codeVC = UIStoryboard(name: "Main", bundle: .main)
                 .instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController else {
                     return
             }
+            codeVC.url = url
             self.present(codeVC, animated: true, completion: nil)
             
         }
