@@ -9,23 +9,24 @@
 import UIKit
 
 private let reuseIdentifier = "FeatureCell"
-private var sizingCell = FeatureCollectionViewCell()
 
 class ProjectDetailCollectionViewController: UICollectionViewController {
     
+    // MARK: - Public Properties
+    
     var project: Project?
+    
+    // MARK: - Private Properties
+    
+    private var sizingCell = FeatureCollectionViewCell()
 
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
+        
         sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell", owner: self, options: nil)?.first as! FeatureCollectionViewCell
-
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -43,7 +44,6 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         project?.featuresArray.count ?? 0
@@ -63,11 +63,11 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
 
 }
 
+// MARK: - Flow Layout Delegate
+
 extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         sizingCell.feature = project?.featuresArray[indexPath.item]
-//        let width = collectionView.frame.width
-//        sizingCell.frame = CGRect(origin: sizingCell.frame.origin, size: CGSize(width: width, height: sizingCell.frame.height))
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         var cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -76,53 +76,3 @@ extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLay
         return cellSize
     }
 }
-
-
-//// UICollectionView Vars and Constants
-//let CellXIBName = YouViewCell.XIBName
-//let CellReuseID = YouViewCell.ReuseID
-//var sizingCell = YouViewCell()
-//
-//
-//fileprivate func initCollectionView() {
-//    // Connect to view controller
-//    collectionView.dataSource = self
-//    collectionView.delegate = self
-//
-//    // Register XIB
-//    collectionView.register(UINib(nibName: CellXIBName, bundle: nil), forCellWithReuseIdentifier: CellReuseID)
-//
-//    // Create sizing cell for dynamically sizing cells
-//    sizingCell = Bundle.main.loadNibNamed(CellXIBName, owner: self, options: nil)?.first as! YourViewCell
-//
-//    // Set scroll direction
-//    let layout = UICollectionViewFlowLayout()
-//    layout.scrollDirection = .vertical
-//    collectionView.collectionViewLayout = layout
-//
-//    // Set properties
-//    collectionView.alwaysBounceVertical = true
-//    collectionView.alwaysBounceHorizontal = false
-//
-//    // Set top/bottom padding
-//    collectionView.contentInset = UIEdgeInsets(top: collectionViewTopPadding, left: collectionViewSidePadding, bottom: collectionViewBottomPadding, right: collectionViewSidePadding)
-//
-//    // Hide scrollers
-//    collectionView.showsVerticalScrollIndicator = false
-//    collectionView.showsHorizontalScrollIndicator = false
-//}
-//
-//
-//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    // Get cell data and render post
-//    let data = YourData[indexPath.row]
-//    sizingCell.renderCell(data: data)
-//
-//    // Get cell size
-//    sizingCell.setNeedsLayout()
-//    sizingCell.layoutIfNeeded()
-//    let cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-//
-//    // Return cell size
-//    return cellSize
-//}

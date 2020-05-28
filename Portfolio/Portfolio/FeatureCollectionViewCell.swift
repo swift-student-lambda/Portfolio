@@ -26,8 +26,7 @@ class FeatureCollectionViewCell: UICollectionViewCell {
         if let url = URL(string: feature.mediaURL) {
              loadImageOperation = LoadImageOperation(url: url, imageView: imageView)
         }
-       
-        // Set up code button
+
         descriptionLabel.text = feature.descriptionText
     }
     

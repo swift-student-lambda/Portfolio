@@ -11,6 +11,8 @@ import UIKit
 
 class ProjectCollectionViewController: UICollectionViewController {
     
+    // MARK: - Private Properties
+    
     private let networkClient = NetworkClient()
     private lazy var syncEngine = SyncEngine(networkClient: networkClient)
     
@@ -34,11 +36,12 @@ class ProjectCollectionViewController: UICollectionViewController {
     
     private var cellSize = CGSize()
 
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         syncEngine.syncProjects()
     }
-
     
     // MARK: - Navigation
 
@@ -54,7 +57,6 @@ class ProjectCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         fetchedResultsController.sections?.count ?? 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         fetchedResultsController.sections?[section].numberOfObjects ?? 0
