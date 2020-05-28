@@ -6,7 +6,7 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mediaURL" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="features" inverseEntity="Project"/>
+        <relationship name="project" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="features" inverseEntity="Project"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>

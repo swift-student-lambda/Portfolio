@@ -40,7 +40,7 @@ class SyncEngine {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiers)
         let context = CoreDataStack.shared.container.newBackgroundContext()
-        context.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+        context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         context.performAndWait {
             do {
                 let existingProjects = try context.fetch(fetchRequest)
@@ -65,6 +65,7 @@ class SyncEngine {
     }
 
     private func update(_ project: Project, with representation: ProjectRep, in context: NSManagedObjectContext) {
+        
         project.name = representation.name
         project.id = representation.id
         project.heroImageURL = representation.heroImageURL
@@ -72,7 +73,13 @@ class SyncEngine {
         project.role = representation.role
         project.technologies = representation.technologies as [NSString]
         project.appStoreLink = representation.appStoreLink
-        let featureArray = representation.features.map { Feature(representation: $0, project: project, context: context) }
-        project.features = Set(featureArray) as NSSet
+        
+        for feature in project.featuresArray {
+            context.delete(feature)
+        }
+        
+        let featureArray = representation.features
+            .map { Feature(representation: $0, project: project, context: context) }
+        project.addToFeatures(Set(featureArray) as NSSet)
     }
 }

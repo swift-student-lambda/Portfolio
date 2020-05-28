@@ -9,16 +9,62 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FeatureCollectionViewCell" customModule="Portfolio" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="403" height="853"/>
-            <autoresizingMask key="autoresizingMask"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="FeatureCollectionViewCell" customModule="Portfolio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="1086"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="403" height="853"/>
+                <rect key="frame" x="0.0" y="0.0" width="620" height="1086"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-GS-pDX">
+                        <rect key="frame" x="0.0" y="61" width="620" height="914.5"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-0h-2q6">
+                        <rect key="frame" x="235" y="995.5" width="150" height="50"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Rj8-E8-LM6"/>
+                            <constraint firstAttribute="height" constant="50" id="Vet-7I-wih"/>
+                        </constraints>
+                        <state key="normal" title="See The Code"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" text="Feature Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-Dc-UyO">
+                        <rect key="frame" x="0.0" y="0.0" width="620" height="41"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-4W-z1I">
+                        <rect key="frame" x="0.0" y="1065.5" width="620" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ghk-4W-z1I" firstAttribute="top" secondItem="cA6-0h-2q6" secondAttribute="bottom" constant="20" id="04C-Ax-ZKk"/>
+                <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" id="27h-Fw-RCl"/>
+                <constraint firstAttribute="bottom" secondItem="Ghk-4W-z1I" secondAttribute="bottom" id="HER-bw-JtD"/>
+                <constraint firstItem="Ghk-4W-z1I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MjD-aj-m7g"/>
+                <constraint firstItem="JkM-GS-pDX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mjo-Dm-kmA"/>
+                <constraint firstAttribute="trailing" secondItem="FJD-Dc-UyO" secondAttribute="trailing" id="Tsn-VX-kSG"/>
+                <constraint firstItem="cA6-0h-2q6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="auv-Tg-G0C"/>
+                <constraint firstItem="JkM-GS-pDX" firstAttribute="top" secondItem="FJD-Dc-UyO" secondAttribute="bottom" constant="20" id="flt-6Y-JqS"/>
+                <constraint firstItem="FJD-Dc-UyO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gkP-ld-U9W"/>
+                <constraint firstAttribute="trailing" secondItem="Ghk-4W-z1I" secondAttribute="trailing" id="gor-qA-UG8"/>
+                <constraint firstItem="FJD-Dc-UyO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gq0-kM-h1G"/>
+                <constraint firstItem="cA6-0h-2q6" firstAttribute="top" secondItem="JkM-GS-pDX" secondAttribute="bottom" constant="20" id="vb4-4c-yxf"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="403" height="853"/>
-            <point key="canvasLocation" x="102.17391304347827" y="138.28125"/>
+            <size key="customSize" width="770" height="1086"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="Ghk-4W-z1I" id="kG8-KY-Qea"/>
+                <outlet property="imageView" destination="JkM-GS-pDX" id="7pW-qR-mts"/>
+                <outlet property="nameLabel" destination="FJD-Dc-UyO" id="f3V-4y-rYk"/>
+                <outlet property="seeCodeButton" destination="cA6-0h-2q6" id="AIo-Qj-rml"/>
+            </connections>
+            <point key="canvasLocation" x="49.275362318840585" y="209.59821428571428"/>
         </collectionViewCell>
     </objects>
 </document>

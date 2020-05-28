@@ -9,10 +9,32 @@
 import UIKit
 
 class FeatureCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    var feature: Feature? { didSet { updateViews() }}
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var seeCodeButton: UIButton!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    private var loadImageOperation: LoadImageOperation?
+    
+    func updateViews() {
+        guard let feature = feature else { return }
+        nameLabel.text = feature.name
+        
+        if let url = URL(string: feature.mediaURL) {
+             loadImageOperation = LoadImageOperation(url: url, imageView: imageView)
+        }
+       
+        // Set up code button
+        descriptionLabel.text = feature.descriptionText
+    }
+    
+    
+    override func prepareForReuse() {
+        loadImageOperation?.cancel()
+        loadImageOperation = nil
     }
 
 }

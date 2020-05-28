@@ -30,6 +30,9 @@
 		04DA2A43247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */; };
 		04DA2A46247F10D0009C5BFE /* FeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */; };
 		04DA2A47247F10D0009C5BFE /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */; };
+		04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4A247FED12009C5BFE /* SSFetchImageOperation.m */; };
+		04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4C247FED12009C5BFE /* SSConcurrentOperation.m */; };
+		04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A4D247FED12009C5BFE /* SSLoadImageOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,13 @@
 		04DA2A42247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCollectionViewCell.xib; sourceTree = "<group>"; };
+		04DA2A49247FED12009C5BFE /* SSConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSConcurrentOperation.h; sourceTree = "<group>"; };
+		04DA2A4A247FED12009C5BFE /* SSFetchImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFetchImageOperation.m; sourceTree = "<group>"; };
+		04DA2A4B247FED12009C5BFE /* SSLoadImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLoadImageOperation.h; sourceTree = "<group>"; };
+		04DA2A4C247FED12009C5BFE /* SSConcurrentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSConcurrentOperation.m; sourceTree = "<group>"; };
+		04DA2A4D247FED12009C5BFE /* SSLoadImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLoadImageOperation.m; sourceTree = "<group>"; };
+		04DA2A4E247FED12009C5BFE /* SSFetchImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFetchImageOperation.h; sourceTree = "<group>"; };
+		04DA2A52247FEF85009C5BFE /* Portfolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Portfolio-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,7 @@
 				04DA2A44247F10D0009C5BFE /* FeatureCollectionViewCell.swift */,
 				04DA2A45247F10D0009C5BFE /* FeatureCollectionViewCell.xib */,
 				0464A235247D8543005F40F0 /* Models */,
+				04DA2A48247FED12009C5BFE /* Operations */,
 				04A648EE247EC1F90012F317 /* Networking */,
 				04465412247D4944005CAF43 /* Resources */,
 			);
@@ -107,6 +118,7 @@
 		04465412247D4944005CAF43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04DA2A52247FEF85009C5BFE /* Portfolio-Bridging-Header.h */,
 				044653FE247D4924005CAF43 /* AppDelegate.swift */,
 				04465400247D4924005CAF43 /* SceneDelegate.swift */,
 				04465407247D4927005CAF43 /* Assets.xcassets */,
@@ -163,6 +175,19 @@
 				04A648DD247E289F0012F317 /* SyncEngine.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		04DA2A48247FED12009C5BFE /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2A49247FED12009C5BFE /* SSConcurrentOperation.h */,
+				04DA2A4C247FED12009C5BFE /* SSConcurrentOperation.m */,
+				04DA2A4E247FED12009C5BFE /* SSFetchImageOperation.h */,
+				04DA2A4A247FED12009C5BFE /* SSFetchImageOperation.m */,
+				04DA2A4B247FED12009C5BFE /* SSLoadImageOperation.h */,
+				04DA2A4D247FED12009C5BFE /* SSLoadImageOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +280,13 @@
 				04A648DA247DEFB00012F317 /* Portfolio.xcdatamodeld in Sources */,
 				04A648E0247E33D80012F317 /* Project+Convenience.swift in Sources */,
 				04DA2A43247F10A5009C5BFE /* ProjectDetailCollectionViewController.swift in Sources */,
+				04DA2A4F247FED12009C5BFE /* SSFetchImageOperation.m in Sources */,
 				04A648DC247E268B0012F317 /* CoreDataStack.swift in Sources */,
 				04A648EA247EBA910012F317 /* Feature+Convenience.swift in Sources */,
 				04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */,
+				04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */,
 				04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */,
+				04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */,
 				04A648DE247E289F0012F317 /* SyncEngine.swift in Sources */,
 				04DA2A46247F10D0009C5BFE /* FeatureCollectionViewCell.swift in Sources */,
 			);
@@ -413,6 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Portfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Portfolio/Resources/Portfolio-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,6 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Portfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Portfolio/Resources/Portfolio-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

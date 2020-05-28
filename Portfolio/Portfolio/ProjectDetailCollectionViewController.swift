@@ -8,9 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "FeatureCell"
+private var sizingCell = FeatureCollectionViewCell()
 
 class ProjectDetailCollectionViewController: UICollectionViewController {
+    
+    var project: Project?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +22,9 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UINib(nibName: "FeatureCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
+        sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell", owner: self, options: nil)?.first as! FeatureCollectionViewCell
+        collectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
 
         // Do any additional setup after loading the view.
     }
@@ -37,53 +42,86 @@ class ProjectDetailCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        project?.featuresArray.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: reuseIdentifier,
+            for: indexPath) as? FeatureCollectionViewCell else {
+                fatalError("Unable to cast cell as \(FeatureCollectionViewCell.self)")
+        }
     
-        // Configure the cell
+        cell.feature = project?.featuresArray[indexPath.row]
     
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
+
+extension ProjectDetailCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        sizingCell.feature = project?.featuresArray[indexPath.item]
+        let width = collectionView.frame.width
+        sizingCell.frame = CGRect(origin: sizingCell.frame.origin, size: CGSize(width: width, height: sizingCell.frame.height))
+        sizingCell.setNeedsLayout()
+        sizingCell.layoutIfNeeded()
+        let cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        return cellSize
+    }
+}
+
+
+//// UICollectionView Vars and Constants
+//let CellXIBName = YouViewCell.XIBName
+//let CellReuseID = YouViewCell.ReuseID
+//var sizingCell = YouViewCell()
+//
+//
+//fileprivate func initCollectionView() {
+//    // Connect to view controller
+//    collectionView.dataSource = self
+//    collectionView.delegate = self
+//
+//    // Register XIB
+//    collectionView.register(UINib(nibName: CellXIBName, bundle: nil), forCellWithReuseIdentifier: CellReuseID)
+//
+//    // Create sizing cell for dynamically sizing cells
+//    sizingCell = Bundle.main.loadNibNamed(CellXIBName, owner: self, options: nil)?.first as! YourViewCell
+//
+//    // Set scroll direction
+//    let layout = UICollectionViewFlowLayout()
+//    layout.scrollDirection = .vertical
+//    collectionView.collectionViewLayout = layout
+//
+//    // Set properties
+//    collectionView.alwaysBounceVertical = true
+//    collectionView.alwaysBounceHorizontal = false
+//
+//    // Set top/bottom padding
+//    collectionView.contentInset = UIEdgeInsets(top: collectionViewTopPadding, left: collectionViewSidePadding, bottom: collectionViewBottomPadding, right: collectionViewSidePadding)
+//
+//    // Hide scrollers
+//    collectionView.showsVerticalScrollIndicator = false
+//    collectionView.showsHorizontalScrollIndicator = false
+//}
+//
+//
+//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    // Get cell data and render post
+//    let data = YourData[indexPath.row]
+//    sizingCell.renderCell(data: data)
+//
+//    // Get cell size
+//    sizingCell.setNeedsLayout()
+//    sizingCell.layoutIfNeeded()
+//    let cellSize = sizingCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+//
+//    // Return cell size
+//    return cellSize
+//}

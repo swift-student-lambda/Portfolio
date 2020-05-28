@@ -9,8 +9,6 @@
 import CoreData
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class ProjectCollectionViewController: UICollectionViewController {
     
     private let networkClient = NetworkClient()
@@ -45,7 +43,10 @@ class ProjectCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let projectDetailVC = segue.destination as? ProjectDetailCollectionViewController,
+            let indexPath = collectionView.indexPathsForSelectedItems?.first {
+            projectDetailVC.project = fetchedResultsController.object(at: indexPath)
+        }
     }
 
     // MARK: UICollectionViewDataSource
