@@ -127,6 +127,7 @@ extension ProjectDetailViewController: UICollectionViewDelegateFlowLayout {
         sizingHeader.project = project
         sizingHeader.setNeedsLayout()
         sizingHeader.layoutIfNeeded()
+        sizingHeader.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
         var headerSize = sizingHeader.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         headerSize.height += 20
         return headerSize
