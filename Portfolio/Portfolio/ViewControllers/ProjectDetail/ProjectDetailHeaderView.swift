@@ -12,9 +12,9 @@ class ProjectDetailHeaderView: UICollectionReusableView {
 
     // MARK: - Public Properties
     
-    var project: Project? { didSet { updateViews() }}
+    var project: Project? { didSet { updateViews() } }
     
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var summaryLabel: UILabel!
     @IBOutlet private var roleLabel: UILabel!
     @IBOutlet private var technologiesLabel: UILabel!

@@ -12,7 +12,7 @@ class LoadVideoOperation: ConcurrentOperation {
     
     // MARK: - Class Properties
     
-    static var fileLookup = Dictionary<URL, URL>() // get local url if file is already downloaded to temp dir
+    static var fileLookup = [URL: URL]() // get local url if file is already downloaded to temp dir
     static var loadVideoQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = "LoadVideoQueue"

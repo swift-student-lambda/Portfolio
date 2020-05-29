@@ -42,5 +42,3 @@ extension Project {
         self.features = Set(featureArray) as NSSet
     }
 }
-
-

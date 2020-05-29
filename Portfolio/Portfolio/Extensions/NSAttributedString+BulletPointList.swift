@@ -23,5 +23,3 @@ extension NSAttributedString {
         return NSAttributedString(string: string, attributes: stringAttributes)
     }
 }
-
-

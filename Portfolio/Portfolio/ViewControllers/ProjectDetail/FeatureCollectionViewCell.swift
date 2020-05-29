@@ -13,7 +13,7 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
-    var feature: Feature? { didSet { updateViews() }}
+    var feature: Feature? { didSet { updateViews() } }
     var seeCodeAction: ((URL) -> Void)?
     
     // MARK: - Private Properties
@@ -24,11 +24,11 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var videoPlayerView: VideoPlayerView!
-    @IBOutlet var seeCodeButton: UIButton!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var videoPlayerView: VideoPlayerView!
+    @IBOutlet private var seeCodeButton: UIButton!
+    @IBOutlet private var descriptionLabel: UILabel!
     
     // MARK: - Public Methods
     
@@ -37,7 +37,7 @@ class FeatureCollectionViewCell: UICollectionViewCell {
             self.videoPlayerView.isHidden = true
             loadImageOperation = LoadImageOperation(url: url, imageView: imageView)
         } else if url.pathExtension.isVideoExtension {
-            loadVideoOperation = LoadVideoOperation(url: url, callback: { [weak self] (fileURL) in
+            loadVideoOperation = LoadVideoOperation(url: url, callback: { [weak self] fileURL in
                 guard let fileURL = fileURL, let self = self else { return }
                 self.startVideoPlayer(with: fileURL)
             })
@@ -73,6 +73,7 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         loadImageOperation?.cancel()
         loadVideoOperation?.cancel()
+        super.prepareForReuse()
     }
     
     // MARK: - IBActions

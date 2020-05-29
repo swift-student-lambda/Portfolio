@@ -18,7 +18,7 @@ class SyncEngine {
     }
     
     func syncProjects() {
-        networkClient.fetchAllProjects { (result) in
+        networkClient.fetchAllProjects { result in
             switch result {
             case .failure(let error):
                 print("⚠️ Error fetching all projects: \(error)")

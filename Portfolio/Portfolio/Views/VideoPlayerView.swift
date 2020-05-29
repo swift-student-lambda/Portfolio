@@ -11,13 +11,16 @@ import UIKit
 
 class VideoPlayerView: UIView {
     override class var layerClass: AnyClass {
-        return AVPlayerLayer.self
+        AVPlayerLayer.self
     }
     var videoPlayerLayer: AVPlayerLayer {
-        return layer as! AVPlayerLayer
+        guard let layer = layer as? AVPlayerLayer else {
+            fatalError("Layer not expected type of \(AVPlayerLayer.self)")
+        }
+        return layer
     }
     var player: AVPlayer? {
-        get { return videoPlayerLayer.player }
+        get { videoPlayerLayer.player }
         set { videoPlayerLayer.player = newValue }
     }
 }

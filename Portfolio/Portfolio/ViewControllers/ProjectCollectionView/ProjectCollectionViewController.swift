@@ -71,16 +71,16 @@ class ProjectCollectionViewController: UICollectionViewController {
     
         let project = fetchedResultsController.object(at: indexPath)
         
-        cell.nameLabel.text = project.name
+        cell.name = project.name
         
         if let url = URL(string: project.heroImageURL) {
-            networkClient.fetchImage(url: url) { (result) in
+            networkClient.fetchImage(url: url) { result in
                 switch result {
                 case .failure(let error):
                     print("⚠️ There was an error fetching an image for \(url): \(error)")
                 case .success(let image):
                     DispatchQueue.main.async {
-                        cell.heroImageView.image = image
+                        cell.heroImage = image
                     }
                 }
             }
@@ -130,13 +130,17 @@ extension ProjectCollectionViewController: UICollectionViewDelegateFlowLayout {
         return cellSize
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
         
         return width * 0.2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         let width = collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right
         return .init(top: 0, left: width * 0.1, bottom: 0, right: width * 0.1)
     }

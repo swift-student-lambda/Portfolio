@@ -20,14 +20,16 @@ class ProjectDetailViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
     
+    // swiftlint:disable force_cast
     private lazy var sizingCell = Bundle.main.loadNibNamed("FeatureCollectionViewCell",
                                                            owner: self,
                                                            options: nil)?.first as! FeatureCollectionViewCell
     private lazy var sizingHeader = Bundle.main.loadNibNamed("ProjectDetailHeaderView",
                                                              owner: self,
                                                              options: nil)?.first as! ProjectDetailHeaderView
+    // swiftlint:enable force_cast
     
     // MARK: - View Lifecycle
     
@@ -90,7 +92,9 @@ extension ProjectDetailViewController: UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: headerID,
@@ -116,7 +120,9 @@ extension ProjectDetailViewController: UICollectionViewDelegateFlowLayout {
         return cellSize
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         sizingHeader.project = project
         sizingHeader.setNeedsLayout()

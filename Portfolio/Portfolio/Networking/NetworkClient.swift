@@ -22,7 +22,7 @@ class NetworkClient {
     }
     
     func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
-        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
+        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { result in
             completion(ImageResultDecoder().decode(result))
         }.resume()
     }

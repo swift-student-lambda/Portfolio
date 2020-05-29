@@ -14,7 +14,7 @@ import CoreData
 extension Feature {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Feature> {
-        return NSFetchRequest<Feature>(entityName: "Feature")
+        NSFetchRequest<Feature>(entityName: "Feature")
     }
 
     @NSManaged public var codeSnippet: String?

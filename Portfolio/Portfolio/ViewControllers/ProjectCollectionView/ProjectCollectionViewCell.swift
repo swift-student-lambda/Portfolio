@@ -9,6 +9,21 @@
 import UIKit
 
 class ProjectCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var heroImageView: UIImageView!
+    
+    // MARK: - Public Properties
+    
+    var name: String? {
+        get { nameLabel.text }
+        set { nameLabel.text = newValue }
+    }
+    
+    var heroImage: UIImage? {
+        get { heroImageView.image }
+        set { heroImageView.image = newValue }
+    }
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var heroImageView: UIImageView!
 }

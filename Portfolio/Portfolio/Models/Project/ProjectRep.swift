@@ -23,4 +23,3 @@ struct ProjectRep: Codable {
 struct ProjectRepDecoder: ResultDecoder {
     typealias ResultType = [ProjectRep]
 }
-
