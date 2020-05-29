@@ -116,15 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				04465404247D4924005CAF43 /* Main.storyboard */,
-				04DA2A6524813B6B009C5BFE /* String+MediaExtensions.swift */,
-				04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */,
-				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
-				04DA2A5F24804430009C5BFE /* CodeViewController.swift */,
-				04DA2A56248019C1009C5BFE /* ProjectCollectionView */,
-				04DA2A55248019B4009C5BFE /* ProjectDetail */,
 				0464A235247D8543005F40F0 /* Models */,
-				04DA2A48247FED12009C5BFE /* Operations */,
+				04DA2A6924813D93009C5BFE /* ViewControllers */,
+				04DA2A6824813D5B009C5BFE /* Views */,
 				04A648EE247EC1F90012F317 /* Networking */,
+				04DA2A48247FED12009C5BFE /* Operations */,
+				04DA2A6724813D41009C5BFE /* Extensions */,
 				04465412247D4944005CAF43 /* Resources */,
 			);
 			path = Portfolio;
@@ -225,6 +222,33 @@
 				04A648F1247EC2C60012F317 /* ProjectCollectionViewCell.swift */,
 			);
 			path = ProjectCollectionView;
+			sourceTree = "<group>";
+		};
+		04DA2A6724813D41009C5BFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2A6524813B6B009C5BFE /* String+MediaExtensions.swift */,
+				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04DA2A6824813D5B009C5BFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04DA2A6924813D93009C5BFE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2A5F24804430009C5BFE /* CodeViewController.swift */,
+				04DA2A56248019C1009C5BFE /* ProjectCollectionView */,
+				04DA2A55248019B4009C5BFE /* ProjectDetail */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

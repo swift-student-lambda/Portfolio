@@ -23,7 +23,6 @@ class SyncEngine {
             case .failure(let error):
                 print("⚠️ Error fetching all projects: \(error)")
             case .success(let projectReps):
-                //print("😁 Successfully fetched all projects: \(projectReps)")
                 do {
                     try self.updateProjects(with: projectReps)
                 } catch {
