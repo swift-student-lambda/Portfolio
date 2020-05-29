@@ -179,20 +179,143 @@
             <point key="canvasLocation" x="-377" y="-602"/>
         </scene>
         <!--About Me-->
-        <scene sceneID="vdu-9c-Gvc">
+        <scene sceneID="b5i-Nk-ksS">
             <objects>
-                <viewController id="3NZ-51-f1n" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lL7-yI-GaX">
+                <tableViewController id="ob9-nM-EPd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" id="Tz2-fQ-pnf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ERi-wJ-NvF"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="About Me" image="person" catalog="system" id="uwB-JR-B22"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dFa-7r-V9w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection id="kRQ-qo-yxA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="328" id="17q-VF-SxR">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="328"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="17q-VF-SxR" id="BKH-Vs-sB1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="328"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shawn" translatesAutoresizingMaskIntoConstraints="NO" id="mDH-j6-291">
+                                                    <rect key="frame" x="20" y="11" width="374" height="306"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mDH-j6-291" firstAttribute="top" secondItem="BKH-Vs-sB1" secondAttribute="topMargin" id="0gH-Hh-H5E"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mDH-j6-291" secondAttribute="trailing" id="7zh-8n-eMg"/>
+                                                <constraint firstItem="mDH-j6-291" firstAttribute="leading" secondItem="BKH-Vs-sB1" secondAttribute="leadingMargin" id="Q4t-DE-9E7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mDH-j6-291" secondAttribute="bottom" id="Twa-qp-vs1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="297" id="d37-Dg-deV">
+                                        <rect key="frame" x="0.0" y="356" width="414" height="297"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d37-Dg-deV" id="eiK-Q7-sh9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-Mc-sVH">
+                                                    <rect key="frame" x="20" y="11" width="374" height="275"/>
+                                                    <string key="text">Hey, my name is Shawn Gee and I am an iOS devoloper currently enrolled in Lambda School. Joining Lambda School is one of the best decisions I have made in my life. While I still have a long way to go, the experience thus far has been amazing. I have learned so much about iOS development that I wouldn't have even known that I needed to learn had I just continued studying on my own. I have also been able to make connections and recently began a role as a Team Lead, which has been super rewarding.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FzO-Mc-sVH" firstAttribute="leading" secondItem="eiK-Q7-sh9" secondAttribute="leadingMargin" id="6IM-Sx-4aw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FzO-Mc-sVH" secondAttribute="trailing" id="RXW-oU-h2u"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FzO-Mc-sVH" secondAttribute="bottom" id="bdh-ne-mWl"/>
+                                                <constraint firstItem="FzO-Mc-sVH" firstAttribute="top" secondItem="eiK-Q7-sh9" secondAttribute="topMargin" id="x7P-Xm-P6G"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="My History" id="g38-Qo-5e7">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="699" id="Uwk-Jh-lTJ">
+                                        <rect key="frame" x="0.0" y="709" width="414" height="699"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwk-Jh-lTJ" id="qLR-z0-pxF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szg-6B-6ra">
+                                                    <rect key="frame" x="20" y="11" width="374" height="677"/>
+                                                    <string key="text">My interest in programming started when I was a little kid and my uncle, who was in to technology, gave me a book about Java. I remember reading through it and though I had no idea how to set up an environment to actually build something with Java, I was simply fascinated by the concept of object-oriented programming that it described in the opening chapter. My young mind was always trying to invent, and this opened my eyes to a way to create things, give them properties, and allow them to perform functions in a virtual world!
+
+It was a long time, however, before I actually got my first taste of programming. In 5th grade I learned HTML, though that wasn’t the same as the Java I had read about. Throughout middle and high school, I worked on websites, built and repaired computers, learned graphic design, motion graphics, video editing, and much more. But I still hadn’t learned to program.
+
+After high school, I intended on going to college for graphic design, but ended up working with my parents business as a woodworker. I dabbled in coding a couple times, but never picked it up for very long. Sometimes I regret not sticking with it, but I’m old enough to know that sometimes things just workout the way they do for a reason.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="szg-6B-6ra" secondAttribute="trailing" id="3gI-am-XPb"/>
+                                                <constraint firstItem="szg-6B-6ra" firstAttribute="leading" secondItem="qLR-z0-pxF" secondAttribute="leadingMargin" id="GUs-mT-nUW"/>
+                                                <constraint firstItem="szg-6B-6ra" firstAttribute="top" secondItem="qLR-z0-pxF" secondAttribute="topMargin" id="K03-rm-fqx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="szg-6B-6ra" secondAttribute="bottom" id="wh9-VI-ydg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="406" id="LoL-mU-rae">
+                                        <rect key="frame" x="0.0" y="1408" width="414" height="406"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LoL-mU-rae" id="caT-zs-UpP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="406"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shawn-genna" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-co-Cyl">
+                                                    <rect key="frame" x="8" y="11" width="398" height="384"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oIh-co-Cyl" secondAttribute="bottom" id="5xk-wR-0g1"/>
+                                                <constraint firstItem="oIh-co-Cyl" firstAttribute="top" secondItem="caT-zs-UpP" secondAttribute="topMargin" id="Vem-QH-Auv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oIh-co-Cyl" secondAttribute="trailing" id="f3l-8B-YI8"/>
+                                                <constraint firstItem="oIh-co-Cyl" firstAttribute="leading" secondItem="caT-zs-UpP" secondAttribute="leadingMargin" id="vvc-QY-Dgd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="199" id="Rbq-yW-GQ4">
+                                        <rect key="frame" x="0.0" y="1814" width="414" height="199"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbq-yW-GQ4" id="ukG-bg-CDr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYD-Wj-7BO">
+                                                    <rect key="frame" x="8" y="11" width="398" height="177"/>
+                                                    <string key="text">I found that reason three years ago when I met my lovely wife, Genna. I really couldn’t ask for a better, more supporting wife. Now that she is working as a respiratory therapist, we have decided that I will use this as an opportunity to pursue a career in iOS development. I am so excited at what the future holds for us!</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cYD-Wj-7BO" secondAttribute="bottom" id="9mA-oC-Yc2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cYD-Wj-7BO" secondAttribute="trailing" id="U8L-n6-StL"/>
+                                                <constraint firstItem="cYD-Wj-7BO" firstAttribute="top" secondItem="ukG-bg-CDr" secondAttribute="topMargin" id="YXm-jk-dUH"/>
+                                                <constraint firstItem="cYD-Wj-7BO" firstAttribute="leading" secondItem="ukG-bg-CDr" secondAttribute="leadingMargin" id="uog-Eg-21C"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ob9-nM-EPd" id="3JX-5c-1lq"/>
+                            <outlet property="delegate" destination="ob9-nM-EPd" id="51o-qv-Q6j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About Me" id="y4m-jL-fk5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1F-cH-wSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="94"/>
+            <point key="canvasLocation" x="1389.8550724637682" y="93.75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IXI-wu-ECD">
@@ -206,18 +329,39 @@
                     </tabBar>
                     <connections>
                         <segue destination="1Ye-Tw-auA" kind="relationship" relationship="viewControllers" id="R8R-JG-Xp9"/>
-                        <segue destination="3NZ-51-f1n" kind="relationship" relationship="viewControllers" id="Tky-YW-r6X"/>
+                        <segue destination="1h1-6V-yld" kind="relationship" relationship="viewControllers" id="bNL-cP-SLs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptw-wX-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-468" y="864"/>
         </scene>
+        <!--About Me-->
+        <scene sceneID="hHg-v6-CFw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1h1-6V-yld" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About Me" image="person" catalog="system" id="7he-xg-0aw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gsp-Mj-VII">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ob9-nM-EPd" kind="relationship" relationship="rootViewController" id="aCK-6g-EKm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoC-uw-Jze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="94"/>
+        </scene>
     </scenes>
     <resources>
         <image name="app" catalog="system" width="128" height="114"/>
         <image name="iphone11-bezel" width="2880" height="5664"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="shawn" width="400" height="533"/>
+        <image name="shawn-genna" width="1005" height="1010"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="WebViewBG">
             <color red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
