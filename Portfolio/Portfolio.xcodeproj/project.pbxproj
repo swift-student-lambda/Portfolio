@@ -150,10 +150,10 @@
 		0464A235247D8543005F40F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04A648EB247EBB090012F317 /* Project */,
-				04A648EC247EBB320012F317 /* Feature */,
 				04A648D8247DEFB00012F317 /* Portfolio.xcdatamodeld */,
 				04A648DB247E268B0012F317 /* CoreDataStack.swift */,
+				04A648EB247EBB090012F317 /* Project */,
+				04A648EC247EBB320012F317 /* Feature */,
 			);
 			path = Models;
 			sourceTree = "<group>";
