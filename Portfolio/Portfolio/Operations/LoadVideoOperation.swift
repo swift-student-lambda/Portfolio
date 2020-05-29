@@ -12,7 +12,7 @@ class LoadVideoOperation: ConcurrentOperation {
     
     // MARK: - Class Properties
     
-    static var cache = Dictionary<URL, URL>() // get local url if file is already downloaded to temp dir
+    static var fileLookup = Dictionary<URL, URL>() // get local url if file is already downloaded to temp dir
     static var loadVideoQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = "LoadVideoQueue"
@@ -42,9 +42,9 @@ class LoadVideoOperation: ConcurrentOperation {
         do {
             try data.write(to: fileURL)
             self.fileURL = fileURL
-            Self.cache[self.sourceURL] = self.fileURL
+            Self.fileLookup[self.sourceURL] = self.fileURL
         } catch {
-            print(error)
+            print("⚠️ Error writing video to disk: \(error)")
             self.cancel()
             return
         }
@@ -62,7 +62,7 @@ class LoadVideoOperation: ConcurrentOperation {
     // MARK: - Lifecycle Methods
     
     override func main() {
-        if let fileURL = Self.cache[sourceURL] {
+        if let fileURL = Self.fileLookup[sourceURL] {
             DispatchQueue.main.async {
                 self.callback(fileURL)
             }
