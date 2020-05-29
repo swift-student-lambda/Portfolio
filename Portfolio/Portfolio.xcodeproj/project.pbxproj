@@ -39,6 +39,7 @@
 		04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A5F24804430009C5BFE /* CodeViewController.swift */; };
 		04DA2A6224805BB6009C5BFE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */; };
 		04DA2A642480792C009C5BFE /* LoadVideoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A632480792C009C5BFE /* LoadVideoOperation.swift */; };
+		04DA2A6624813B6B009C5BFE /* String+MediaExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2A6524813B6B009C5BFE /* String+MediaExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		04DA2A5F24804430009C5BFE /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		04DA2A632480792C009C5BFE /* LoadVideoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadVideoOperation.swift; sourceTree = "<group>"; };
+		04DA2A6524813B6B009C5BFE /* String+MediaExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MediaExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				04465404247D4924005CAF43 /* Main.storyboard */,
+				04DA2A6524813B6B009C5BFE /* String+MediaExtensions.swift */,
 				04DA2A6124805BB6009C5BFE /* VideoPlayerView.swift */,
 				04DA2A5B24801D34009C5BFE /* NSAttributedString+BulletPointList.swift */,
 				04DA2A5F24804430009C5BFE /* CodeViewController.swift */,
@@ -323,6 +326,7 @@
 				04A648E5247E35490012F317 /* Project+CoreDataClass.swift in Sources */,
 				04DA2A50247FED12009C5BFE /* SSConcurrentOperation.m in Sources */,
 				04DA2A6224805BB6009C5BFE /* VideoPlayerView.swift in Sources */,
+				04DA2A6624813B6B009C5BFE /* String+MediaExtensions.swift in Sources */,
 				04A648E6247E35490012F317 /* Project+CoreDataProperties.swift in Sources */,
 				04DA2A51247FED12009C5BFE /* SSLoadImageOperation.m in Sources */,
 				04DA2A6024804430009C5BFE /* CodeViewController.swift in Sources */,

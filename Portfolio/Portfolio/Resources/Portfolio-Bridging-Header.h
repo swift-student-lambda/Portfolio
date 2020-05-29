@@ -13,3 +13,4 @@
 #endif /* Portfolio_Bridging_Header_h */
 
 #import "SSLoadImageOperation.h"
+#import "SSFetchDataOperation.h"

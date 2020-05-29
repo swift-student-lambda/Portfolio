@@ -123,6 +123,7 @@ static NSCache *_imageCache;
 
 - (void)cancel {
     [self.fetchImageOperation cancel];
+    [super cancel];
 }
 
 @end

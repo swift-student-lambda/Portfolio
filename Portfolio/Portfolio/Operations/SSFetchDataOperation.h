@@ -10,12 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(FetchDataOperation)
 @interface SSFetchDataOperation : SSConcurrentOperation
 
-@property NSURL *url;
-@property NSData *data;
+@property (nonatomic) NSURL *url;
+@property (nonatomic, nullable) NSData *data;
 
-- (instancetype)initWithURL:(NSURL *)imageURL;
+- (instancetype)initWithURL:(NSURL *)url;
 
 @end
 

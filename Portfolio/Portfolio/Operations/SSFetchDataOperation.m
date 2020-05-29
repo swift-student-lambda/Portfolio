@@ -10,7 +10,7 @@
 
 @interface SSFetchDataOperation ()
 
-@property NSURLSessionDataTask *fetchImageTask;
+@property NSURLSessionDataTask *fetchDataTask;
 
 @end
 
@@ -31,12 +31,12 @@
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:self.url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {
-            NSLog(@"Error fetching image: %@", error);
+            NSLog(@"Error fetching data: %@", error);
             return;
         }
 
         if (!data) {
-            NSLog(@"Error fetching image: no data");
+            NSLog(@"Error fetching data: no data");
             return;
         }
 
@@ -48,7 +48,7 @@
 }
 
 - (void)cancel {
-    [self.fetchImageTask cancel];
+    [self.fetchDataTask cancel];
     [super cancel];
 }
 
