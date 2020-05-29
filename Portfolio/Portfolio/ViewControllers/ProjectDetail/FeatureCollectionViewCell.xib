@@ -25,14 +25,11 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdE-Nf-ihu">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdE-Nf-ihu" userLabel="Media Container View">
                                 <rect key="frame" x="20" y="44" width="320" height="693"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-GS-pDX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="693"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="1Zr-rm-hv9"/>
-                                        </constraints>
                                     </imageView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-xH-Js8" customClass="VideoPlayerView" customModule="Portfolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="693"/>
@@ -43,7 +40,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="JkM-GS-pDX" secondAttribute="bottom" id="0EX-jq-a1m"/>
                                     <constraint firstAttribute="bottom" secondItem="AWk-xH-Js8" secondAttribute="bottom" id="4eK-vR-oBM"/>
-                                    <constraint firstAttribute="width" secondItem="JkM-GS-pDX" secondAttribute="height" multiplier="1125:2436" id="B1U-yQ-qDf"/>
+                                    <constraint firstAttribute="height" constant="693" id="FmE-v9-zQA"/>
                                     <constraint firstAttribute="trailing" secondItem="AWk-xH-Js8" secondAttribute="trailing" id="PwH-q9-9Pj"/>
                                     <constraint firstAttribute="trailing" secondItem="JkM-GS-pDX" secondAttribute="trailing" id="R8j-uS-KTb"/>
                                     <constraint firstItem="AWk-xH-Js8" firstAttribute="top" secondItem="QdE-Nf-ihu" secondAttribute="top" id="jqu-PT-Dvb"/>
@@ -114,6 +111,8 @@
             <connections>
                 <outlet property="descriptionLabel" destination="Ghk-4W-z1I" id="kG8-KY-Qea"/>
                 <outlet property="imageView" destination="JkM-GS-pDX" id="7pW-qR-mts"/>
+                <outlet property="mediaContainerView" destination="QdE-Nf-ihu" id="0Ui-zi-B7F"/>
+                <outlet property="mediaHeightConstraint" destination="FmE-v9-zQA" id="aor-KT-Eqd"/>
                 <outlet property="nameLabel" destination="FJD-Dc-UyO" id="f3V-4y-rYk"/>
                 <outlet property="seeCodeButton" destination="cA6-0h-2q6" id="AIo-Qj-rml"/>
                 <outlet property="videoPlayerView" destination="AWk-xH-Js8" id="bma-cV-bx6"/>

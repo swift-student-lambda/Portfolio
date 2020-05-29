@@ -15,8 +15,9 @@ extension Feature {
             name: name,
             id: id,
             mediaURL: mediaURL,
+            mediaAspectRatio: mediaAspectRatio?.doubleValue,
             description: descriptionText,
-            codeSnippet: codeSnippet
+            codeSnippetURL: codeSnippetURL
         )
     }
     
@@ -26,8 +27,11 @@ extension Feature {
         self.name = representation.name
         self.id = representation.id
         self.mediaURL = representation.mediaURL
+        if let mediaAspectRatio = representation.mediaAspectRatio {
+            self.mediaAspectRatio = NSNumber(value: mediaAspectRatio)
+        }
         self.descriptionText = representation.description
-        self.codeSnippet = representation.codeSnippet
+        self.codeSnippetURL = representation.codeSnippetURL
         self.project = project
     }
 }

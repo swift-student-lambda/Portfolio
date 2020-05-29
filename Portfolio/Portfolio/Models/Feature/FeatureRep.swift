@@ -12,6 +12,7 @@ struct FeatureRep: Codable {
     let name: String
     let id: UUID
     let mediaURL: String
+    let mediaAspectRatio: Double?
     let description: String
-    let codeSnippet: String?
+    let codeSnippetURL: String?
 }

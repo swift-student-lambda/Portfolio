@@ -29,6 +29,9 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var videoPlayerView: VideoPlayerView!
     @IBOutlet private var seeCodeButton: UIButton!
     @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var mediaContainerView: UIView!
+    @IBOutlet private var mediaHeightConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Public Methods
     
@@ -64,6 +67,13 @@ class FeatureCollectionViewCell: UICollectionViewCell {
         videoPlayer?.play()
     }
     
+    override func layoutSubviews() {
+        if let feature = feature, let aspectRatio = feature.mediaAspectRatio {
+            mediaHeightConstraint.constant = mediaContainerView.frame.width * (1 / aspectRatio.cgFloatValue)
+        }
+        super.layoutSubviews()
+    }
+    
     private func updateViews() {
         guard let feature = feature else { return }
         nameLabel.text = feature.name
@@ -85,7 +95,7 @@ class FeatureCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func seeCodeButtonTouchUpInside(_ sender: UIButton) {
-        if let urlString = feature?.codeSnippet, let url = URL(string: urlString) {
+        if let urlString = feature?.codeSnippetURL, let url = URL(string: urlString) {
             seeCodeAction?(url)
         }
         UIView.animate(withDuration: 0.1) {
@@ -97,5 +107,11 @@ class FeatureCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.1) {
             sender.backgroundColor = .systemGray5
         }
+    }
+}
+
+extension NSNumber {
+    var cgFloatValue: CGFloat {
+        CGFloat(self.doubleValue)
     }
 }
